@@ -116,7 +116,7 @@ a {
     margin: 0 auto;
     position: relative;
 }
-  
+
 .flex {
     display: flex;
 }
@@ -174,7 +174,7 @@ a {
 
 .logo{
   position: absolute;
-  top: 170px;
+  top: 140px;
   left: -120px;
   transition: all 0.3s ease;
 }
@@ -297,39 +297,39 @@ a {
 }
 
 .topPanel-wrapper_right{
-    margin-left: 80px; 
+    margin-left: 80px;
 }
 
 
 .topPanel-wrapper_right span {
  margin: 0px 28px;
- text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); 
+ text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 button, .button {
  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; 
-  cursor: pointer; 
-  background-image: url(../images/button.jpg); 
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  padding: 19px 45px; 
-  border: none; 
-  color: #fff; 
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); 
-  position: relative; 
-  z-index: 1; 
-  text-align: center; 
-  text-transform: uppercase; 
-  font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif; 
-  font-size: 15px;  
-  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2); 
-  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-image: url(../images/button.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 19px 45px;
+  border: none;
+  color: #fff;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+  font-size: 15px;
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
 }
 button:hover, .button:hover {
- -webkit-filter: brightness(120%); 
+ -webkit-filter: brightness(120%);
  filter: brightness(120%);
- box-shadow: 0 10px 26px -6px rgb(255 156 0 / 50%); 
+ box-shadow: 0 10px 26px -6px rgb(255 156 0 / 50%);
 }
 
 .button { display: inline-block; text-decoration: none; }
@@ -360,14 +360,14 @@ a.sign-in:hover{
     bottom: -55px;
     color: #ff1e1e;
     background: url(../images/fon-time.png) no-repeat;
-    text-shadow: 0px 0px 25px rgba(255, 0, 0, 1); 
+    text-shadow: 0px 0px 25px rgba(255, 0, 0, 1);
 }
 
 .server-time span {
     font-size: 14px;
     color: #fff;
 }
-  
+
 .content{
     position: relative;
     z-index: 9;
@@ -447,7 +447,7 @@ a.sign-in:hover{
 .btn-download span {
     position: absolute;
     bottom: 38px;
-    left: 120px; 
+    left: 120px;
     transition: 0.5s;
     color: #5c320f;
     font-family: 'Open sans';
@@ -491,7 +491,7 @@ a.sign-in:hover{
     position: relative;
     display: inline-block;
 }
-  
+
 .serverInfo {
     position: absolute;
     width: 100px;
@@ -545,7 +545,7 @@ a.sign-in:hover{
 .bright:hover {
     filter: brightness(120%);
 }
-  
+
 .swiper-news {
     position: relative;
     width: 590px;
@@ -580,7 +580,7 @@ a.sign-in:hover{
     height: 35px;
     z-index: 11;
 }
-  
+
 .swiper-news .swiper-button-next{
     width: 20px;
     height: 20px;
@@ -600,11 +600,11 @@ a.sign-in:hover{
     font-size: 15px;
     font-weight: bold;
 }
-  
+
 .swiper-news .swiper-pagination-current {
     color: #fff;
 }
-  
+
 .slider-title {
     position: absolute;
     left: 40px;
@@ -671,9 +671,9 @@ a.sign-in:hover{
     color: #ff9c00;
     font-size: 20px;
     font-weight: bold;
-    padding: 5px 10px 0px 0px;	
+    padding: 5px 10px 0px 0px;
 }
-   
+
 .news-top-title {
     position: relative;
     display: flex;
@@ -695,7 +695,7 @@ a.sign-in:hover{
     color: #ff9c00;
     font-weight: 700;
 }
-   
+
 .news-top-title span {
     display: block;
     color: #7e7c7b;
@@ -706,7 +706,7 @@ a.sign-in:hover{
     position: relative;
     transition: 0.3s;
 }
-   
+
 .news-top-title span:hover{
     color: #ffe26e;
     cursor: pointer;
@@ -736,7 +736,7 @@ a.sign-in:hover{
     to {
         opacity: 1;
     }
-}  
+}
 
 .tab-block li {
     position: relative;
@@ -785,17 +785,17 @@ a.sign-in:hover{
     padding: 6px 16px 6px 16px;
     color: #fff;
     -webkit-transition: all 0.3s ease;
-   transition: all 0.3s ease; 
-   cursor: pointer; 
-   background-image: url(../images/button.jpg); 
-   background-repeat: no-repeat; 
-   background-size: cover; 
-   border: none; 
-   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); 
-   text-align: center; 
-   font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif; 
-   -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2); 
-   box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2); 
+   transition: all 0.3s ease;
+   cursor: pointer;
+   background-image: url(../images/button.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   border: none;
+   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+   -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+   box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
    opacity: 0.7;
 }
 
@@ -902,7 +902,7 @@ a.sign-in:hover{
     color: #ff0000;
     position: absolute;
     margin-top: -5px;
-}   
+}
 
 .top-list {
     height: 41px;
@@ -1463,7 +1463,7 @@ footer .f-logo {
 }
 
 footer .f-logo:hover {
-    -webkit-filter: brightness(140%); 
+    -webkit-filter: brightness(140%);
     filter: brightness(140%);
 }
 
@@ -1479,7 +1479,7 @@ footer .f-logo:hover {
     cursor: pointer;
     overflow: auto;
     -webkit-transition: background 0.25s linear;
-    -moz-transition: background 0.25s linear; 
+    -moz-transition: background 0.25s linear;
     transition: background 0.25s linear;
 }
 
@@ -1694,7 +1694,7 @@ footer .f-logo:hover {
     margin-bottom: 40px;
 }
 
-.news-block { 
+.news-block {
   width: 800px;
   padding: 0px 40px 40px 40px;
   margin-left: 10px;
@@ -1745,7 +1745,7 @@ footer .f-logo:hover {
 }
 
 .news-block .date b{
-   font-size: 20px; 
+   font-size: 20px;
 }
 /*end page*/
 
@@ -1782,28 +1782,28 @@ footer .f-logo:hover {
 
 .btn-download-file {
   -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; 
-  cursor: pointer; 
-  background-image: url(../images/button.jpg); 
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  padding: 19px 28px; 
-  border: none; 
-  color: #fff; 
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); 
-  position: relative; 
-  z-index: 1; 
-  text-align: center; 
-  text-transform: uppercase; 
-  font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif; 
-  font-size: 15px;  
-  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-image: url(../images/button.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 19px 28px;
+  border: none;
+  color: #fff;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+  font-size: 15px;
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .btn-download-file:hover {
     box-shadow: 0 10px 26px -6px rgb(255 156 0 / 50%);
-    -webkit-filter: brightness(120%); 
+    -webkit-filter: brightness(120%);
     filter: brightness(120%);
 }
 
@@ -1843,7 +1843,7 @@ footer .f-logo:hover {
 /*slider*/
 /* Slider */
 .slick-slider{
-    position: relative;   
+    position: relative;
     display: block;
     box-sizing: border-box;
     -webkit-user-select: none;
@@ -1987,12 +1987,12 @@ footer .f-logo:hover {
   top: 50%;
   margin-top: -4px;
   opacity: 0.2;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .log-in-menu-1:hover:after {
   opacity: 1;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .main-item-log-in {
@@ -2013,7 +2013,7 @@ footer .f-logo:hover {
   visibility: hidden;
   opacity: 0;
   border: 1px solid #201f28;
-  box-shadow: 0px 10px 25px 0px rgb(0 0 0 / 0.6); 
+  box-shadow: 0px 10px 25px 0px rgb(0 0 0 / 0.6);
 }
 
 .hidden-block-log-in a{
@@ -2035,11 +2035,11 @@ footer .f-logo:hover {
   height: 12px;
   background: url(../images/lang-block-1.png) no-repeat;
   opacity: 0.2;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 .hidden-block-log-in li a:hover:after{
   opacity: 1;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .hidden-block-log-in:after {
@@ -2066,7 +2066,7 @@ background: url(../images/hidden-block-log-in.png) no-repeat;
   height: 15px;
   background: url(../images/log-out.png) no-repeat;
   opacity: 0.3;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 .log-out{
  padding: 10px 0px;
@@ -2094,7 +2094,7 @@ background: url(../images/hidden-block-log-in.png) no-repeat;
 }
 .hidden-block-log-in a:hover:after{
   opacity: 1;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .menulog-in li a {
@@ -2118,20 +2118,20 @@ background: url(../images/hidden-block-log-in.png) no-repeat;
 
 /*animation*/
 
-.smoke { 
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    top: 600px; 
-    height: 484px; 
-    width: 100%; 
-    background-image: url(../images/smoke.png); 
-    background-position: left top; 
+.smoke {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 600px;
+    height: 484px;
+    width: 100%;
+    background-image: url(../images/smoke.png);
+    background-position: left top;
     background-repeat: repeat-x;
-    -webkit-animation: smoke 20s linear infinite; 
-    animation: smoke 20s linear infinite; 
-    -webkit-animation-fill-mode: forwards; 
-    animation-fill-mode: forwards; 
+    -webkit-animation: smoke 20s linear infinite;
+    animation: smoke 20s linear infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
  }
 
 @-webkit-keyframes smoke { 0% { background-position: left -1920px top; }
