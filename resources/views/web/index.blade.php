@@ -29,9 +29,18 @@
     <link href="https://allfont.ru/allfont.css?fonts=cinzel-decorative-bold" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
     <link href="{{ asset('css/style-mobile.css') }}" rel="stylesheet">
+
+    {{--  TOAST NOTIFICATION  --}}
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
+
+
 </head>
 
 <body>
+    @include('web.components.notification')
+
     <div class="smoke"></div>
     <div class="top-panel">
         <div class="top-panel-block flex-c-c">
@@ -46,10 +55,10 @@
             <div class="menuContent">
                 <ul class="menu flex-c-c">
                     <li class="active"><a href="">Home</a></li>
-                    <li><a href="">registration</a></li>
+                    <li><a href="">cadastro</a></li>
                     <li><a href="">top players</a></li>
                     <li><a href="">Top Guilds</a></li>
-                    <li><a href="">about us</a></li>
+                    <li><a href="">sobre</a></li>
                     <li><a href="">forum</a></li>
                 </ul>
             </div>
@@ -61,9 +70,12 @@
                     <a href="" class="yt"></a>
                 </div>
                 <div class="topPanel-wrapper_right flex-c">
-                <a href="" onclick="new modal('#sign_up_modal');return false" class="sign-in">REGISTRO</a>
+                <a href="" onclick="new modal('#sign_up_modal');return false" class="sign-in">CADASTRO</a>
                 <span>OU</span>
-                <a href="" onclick="new modal('#login_modal');return false" class="button">LOGIN</a>
+                {{-- <a href="" onclick="new modal('#');return false" class="button">LOGIN</a> --}}
+                <button class="button" id="loginMain">
+                    {{ __('LOGIN') }}
+                </button>
             </div>
             </div>
         </div>
@@ -156,6 +168,15 @@
     <script src="{{ asset('js/global.js') }}"></script>
     <script src="{{ asset('js/slick.min.js') }}"></script>
     <script src="{{ asset('js/modalx.js') }}"></script>
+     <!-- JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/js/toastr.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+
+
+    @include('web.partials.register')
+
+    @yield('scripts')
+
 	<script>
 		var swiper = new Swiper('.swiper-news', {
 			autoplay: {
@@ -197,39 +218,7 @@
 		});
 	</script>
 
-    <!-- Sign In -->
-    <div class="modal_window icon-modal-reg" id="sign_up_modal">
-        <h3>Registration</h3>
-        <div class='modal_form'>
-            <div class="formGroup error">
-                <span class="formGroup-name">Nickname</span>
-                <input type="text" name="login">
-                <div class="errorGroup">
-                    <span class="color-red">Error!</span> Such nickname is already exist.
-                </div>
-            </div>
-            <div class="formGroup">
-                <span class="formGroup-name">Email</span>
-                <input type="text" name="email">
-            </div>
-            <div class="formGroup">
-                <span class="formGroup-name">Password</span>
-                <input type="password" name="pass">
-            </div>
-            <div class="formGroup">
-                <span class="formGroup-name">Password</span>
-                <input type="password" name="pass-check">
-            </div>
-            <p class="agree"> <input type="checkbox" class="checkbox" id="agree" name="agree" checked>
-                <label for="agree"></label> I have read and agree to the <a href="">game rules.</a>
-            </p>
-            <div class="flex-s-c formGroup-button">
-                <button class="button">Sign up</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Log In -->
+    {{-- <!-- Log In -->
     <div class="modal_window icon-modal-login" id="login_modal">
         <h3>ACCOUNT PANEL</h3>
         <div class='modal_form'>
@@ -258,6 +247,7 @@
                 <button class="button">Sign in</button>
             </div>
         </div>
-    </div>
+    </div> --}}
+
 </body>
 </html>

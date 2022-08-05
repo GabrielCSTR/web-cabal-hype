@@ -52,17 +52,17 @@
         </div>
         <ul class="tab-block active" id="news">
             <li class="flex-s-c">
-                <p class="info"><span class="news-1">[NEWS]</span> Lançamento server Beta 05/08/2022 ...</p>
-                <span class="date">04.08</span>
+                <p class="info"><span class="news-1">[NEWS]</span> Cadastro liberado server Beta!</p>
+                <span class="date">05.08</span>
                 <a href="#" class="button-more">more</a>
             </li>
             <li class="flex-s-c">
-                <p class="info"><span class="news-1">[NEWS]</span> Novas fantasias adicionadas ...</p>
+                <p class="info"><span class="news-1">[NEWS]</span> Lançamento server Beta 60/08/2022</p>
                 <span class="date">01.08</span>
                 <a href="#" class="button-more">more</a>
             </li>
             <li class="flex-s-c">
-                <p class="info"><span class="news-1">[NEWS]</span> Novas dungeos adicionadas ...</p>
+                <p class="info"><span class="news-1">[NEWS]</span> Novas dungeos adicionadas!</p>
                 <span class="date">28.07</span>
                 <a href="#" class="button-more">more</a>
             </li>

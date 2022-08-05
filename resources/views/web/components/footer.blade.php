@@ -10,11 +10,11 @@
     <div class="footer-block-t">
         <ul class="f-menu">
             <li><a href="">Home</a></li>
-            <li><a href="">Registration</a></li>
+            <li><a href="">Cadastro</a></li>
             <li><a href="">Download</a></li>
             <li><a href="">Ranking</a></li>
             <li><a href="">Forum</a></li>
-            <li><a href="">Contact Us</a></li>
+            <li><a href="">Contato</a></li>
         </ul>
     </div>
     <div class="bottom-footer flex-s-c">
@@ -32,7 +32,7 @@
                 <li class="twitch"><a href="#"></a></li>
                 <li class="youtube"><a href="#"></a></li>
             </ul>
-            <a href="https://templstock.com" class="designed"></a>
+            <a href="https://strdeveloped.com.br/" class="developed"></a>
         </div>
     </div>
 </footer>
