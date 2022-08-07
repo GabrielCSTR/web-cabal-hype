@@ -23,7 +23,7 @@
             <p class="info">This site has no associated with <br> or endorsaid by ESTSOF Inc</p>
         </div>
         <a class="f-logo" href="/">
-            <img src="./images/logo-footer.png" alt="">
+            <img src="./images/logo-footer.png" alt="logo" style="width: 160px;">
         </a>
         <div>
             <ul class="social-networks flex-s-c">
@@ -32,7 +32,7 @@
                 <li class="twitch"><a href="#"></a></li>
                 <li class="youtube"><a href="#"></a></li>
             </ul>
-            <a href="https://strdeveloped.com.br/" class="developed"></a>
+            <a href="https://strdeveloped.com.br/" class="designed"></a>
         </div>
     </div>
 </footer>

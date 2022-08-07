@@ -180,6 +180,7 @@ a {
 }
 .logo img{
 	width:500px;
+    height: 450px;
 }
 .logo:hover {
     filter: brightness(1.2);

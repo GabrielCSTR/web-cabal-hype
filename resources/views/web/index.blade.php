@@ -97,15 +97,15 @@
         </header><!-- .header-->
         <main class="content">
             <div class="fast-button flex-s">
-                <div class="btn-download"><a class="" href="#"><span>Game client 3.45Gb</span></a></div>
+                <div class="btn-download"><a class="" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing"><span>Game client 3.45Gb</span></a></div>
                 <div class="reg-block">
                     <a href=""><div class="b-icons iso"></div>
-                        <span>download</span>
-                        <span class="b-icons-text">INSTALADOR</span>
+                        <span>download GoogleDrive</span>
+                        <span class="b-icons-text"> PATCH</span>
                     </a>
                     <a href=""><div class="b-icons android"></div>
-                        <span>download</span>
-                        <span class="b-icons-text">INSTALADOR</span>
+                        <span>download MediaFire</span>
+                        <span class="b-icons-text"> PATCH</span>
                     </a>
                 </div>
                 <div class="status-block">
