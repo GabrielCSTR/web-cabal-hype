@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('web.index');
 // })->name('home');
 
-route::get('/', [WebIndexController::class, 'index'])->name('home');
-
-route::post('/register', [AuthController::class, 'register'])->name('register');
+/**
+ * ROUTES WEB
+ */
+route::get('/', [WebIndexController::class, 'index'])->name('web.home');
+route::get('/download', [WebIndexController::class, 'download'])->name('web.download');
+route::post('/register', [AuthController::class, 'register'])->name('web.register');

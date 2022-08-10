@@ -79,8 +79,7 @@
         </div>
     </div>
 
-    @section('scripts')
-    @parent
+@section('scripts')
 
     <script>
     $(function () {
@@ -95,7 +94,7 @@
                     Accept: "application/json",
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                url: "{{ route('register') }}",
+                url: "{{ route('web.register') }}",
                 data: formData,
                 success: function (resp) {
                         if (resp.success) {
@@ -128,3 +127,4 @@
         });
     })
     </script>
+@endsection

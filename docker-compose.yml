@@ -31,21 +31,21 @@ services:
             - strdev-network
 
     # db mysql
-    mysql:
-        container_name: strdev-web-mysql
-        image: mysql:5.7.22
-        restart: unless-stopped
-        environment:
-            MYSQL_DATABASE: ${DB_DATABASE}
-            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-            MYSQL_PASSWORD: ${DB_PASSWORD}
-            MYSQL_USER: ${DB_USERNAME}
-        volumes:
-            - ./.docker/mysql/dbdata:/var/lib/mysql
-        ports:
-            - "3306:3306"
-        networks:
-            - strdev-network
+    # mysql:
+    #     container_name: strdev-web-mysql
+    #     image: mysql:5.7.22
+    #     restart: unless-stopped
+    #     environment:
+    #         MYSQL_DATABASE: ${DB_DATABASE}
+    #         MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    #         MYSQL_PASSWORD: ${DB_PASSWORD}
+    #         MYSQL_USER: ${DB_USERNAME}
+    #     volumes:
+    #         - ./.docker/mysql/dbdata:/var/lib/mysql
+    #     ports:
+    #         - "3306:3306"
+    #     networks:
+    #         - strdev-network
 
     # queue
     queue:

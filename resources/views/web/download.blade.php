@@ -134,24 +134,103 @@
                 </div>
             </div>
 
-            {{-- NEWS --}}
-            @include('web.components.news')
+            <div class="widgets_news flex-s">
+                <div class="widget-panel-left">
+                    <div class="widget-block">
+                        <div class="info-widget-block top-players flex-s">
+                            <h2 class="title-widget-block">Top Players</h2>
+                            <input type="button" class="add" value="">
+                        </div>
+                        <ul class="top-block top-players">
+                            @foreach ($rankings as $key => $rank)
+                                <li class="top-list">
+                                    <span class="top-number">0{{ $key + 1 }}.</span> <span class="top-flag"><img src="images/flag-icon.png" alt=""></span> <span class="top-name"><a href="" title="nickname">{{ $rank->Name }}</a></span> <span class="top-lvl">{{ $rank->LEV }}</span> <span class="top-Res">
+                                    @php
+                                        if ($rank->Reputation<=10000) { echo '(0)';}
+                                        if ($rank->Reputation>=10000 and $rank->Reputation<20000) { echo '(1)';}
+                                        if ($rank->Reputation>=20000 and $rank->Reputation<40000) { echo '(2)';}
+                                        if ($rank->Reputation>=40000 and $rank->Reputation<80000) { echo ' (3)';}
+                                        if ($rank->Reputation>=80000 and $rank->Reputation<160000) { echo ' (4)';}
+                                        if ($rank->Reputation>=160000 and $rank->Reputation<320000) { echo ' (5)';}
+                                        if ($rank->Reputation>=320000 and $rank->Reputation<640000) { echo ' (6)';}
+                                        if ($rank->Reputation>=640000 and $rank->Reputation<1280000) { echo ' (7)';}
+                                        if ($rank->Reputation>=1280000 and $rank->Reputation<2560000) { echo ' (8)';}
+                                        if ($rank->Reputation>=2560000 and $rank->Reputation<5120000) { echo ' (9)';}
+                                        if ($rank->Reputation>=5120000 and $rank->Reputation<10000000) { echo ' (10)';}
+                                        if ($rank->Reputation>=10000000 and $rank->Reputation<20000000) { echo ' (11)';}
+                                        if ($rank->Reputation>=20000000 and $rank->Reputation<50000000) { echo ' (12)';}
+                                        if ($rank->Reputation>=50000000 and $rank->Reputation<80000000) { echo ' (13)';}
+                                        if ($rank->Reputation>=80000000 and $rank->Reputation<150000000) { echo ' (14)';}
+                                        if ($rank->Reputation>=150000000 and $rank->Reputation<300000000) { echo ' (15)';}
+                                        if ($rank->Reputation>=300000000 and $rank->Reputation<500000000) { echo ' (16)';}
+                                        if ($rank->Reputation>=500000000 and $rank->Reputation<1000000000) { echo ' (17)';}
+                                        if ($rank->Reputation>=1000000000 and $rank->Reputation<1500000000) { echo ' (18)';}
+                                        if ($rank->Reputation>=1500000000 and $rank->Reputation<2000000000) { echo ' (19)';}
+                                        if ($rank->Reputation>=2000000000) { echo ' (20)';}
+                                    @endphp
+                                    <sup>0</sup></span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="widget-block-span"></div>
+                    <div class="widget-block">
+                        <div class="info-widget-block top-guilds flex-s">
+                            <h2 class="title-widget-block">Top Guilds</h2>
+                            <input type="button" class="add">
+                        </div>
+                        <ul class="top-block top-guilds">
+                            <li class="top-title">
+                                <span class="top-number">#</span> <span class="top-flag"></span> <span class="top-name">Name</span> <span class="top-score">Score</span>
+                            </li>
+                            @foreach ($guilds as $key => $guild)
+                                <li class="top-list">
+                                    <span class="top-number">{{ $key +1 }}.</span> <span class="top-flag"><img src="images/flag-icon.png" alt=""></span> <span class="top-name"><a href="" title="nickname">{{ $guild->GuildName }}</a></span> <span class="top-score">{{ $guild->Point }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="widget-block-span"></div>
+                        <div class="widget-block">
+                            <div class="info-widget-block top-event flex-s">
+                                <h2 class="title-widget-block">Event</h2>
+                                <input type="button" class="add">
+                            </div>
+                            <ul class="event-timers">
 
-            {{-- RANKINGS / EVENT --}}
-            @include('web.components.rankings')
+                            </ul>
+                        </div>
+                </div>
+                <div class="news-block">
+                    <h2>Download</h2>
+                        <div class="download">
+                            <div class="download-files">
+                                <h3>TUTORIAL <p>Baixe e instale seu cliente, em seguida baixe o patch e extraia dentro da pasta do seu cliente.</p></h3>
 
-            <h2 class="title-video-panel">Video</h2>
-            <div class="video-pannel flex-s">
-                {{-- VIDEOS/IMAGES --}}
-                @include('web.components.videos')
-
-                {{-- BANNERS --}}
-                @include('web.components.banners')
+                                <div class="google-drive">
+                                    <p>Download Mirror 1 [Google Drive]: <a href="#">Download - 3.45 GB</a></p>
+                                    <a target="_blank" hreg="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing" class="btn-download-file">Download Client</a>
+                                </div>
+                                <div class="mega">
+                                    <p>Download Mirror 2 [MediaFire]: <a href="#">Download - 3.45 GB</a></p>
+                                    <a target="_blank" hreg="https://www.mediafire.com/file/uncbleji6g3lfse/Cabal_Hype.7z/file" class="btn-download-file">Download Client</a>
+                                </div>
+                                <div class="dropbox">
+                                    <p>Download Mirror 3 [PATCH]: Download: <a href="#">Download - 1.45 GB</a></p>
+                                    <a target="_blank" hreg="#" class="btn-download-file">Download Patch</a>
+                                </div>
+                            </div>
+                            <div class="drivers-block">
+                                <h3>Drivers</h3>
+                                <ul class="drivers flex-s-c">
+                                    <li class="nvidia"><a href="#"></a></li>
+                                    <li class="directx"><a href="#"></a></li>
+                                    <li class="microsoft-net"><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
             </div>
-
-            {{-- MARKET --}}
-            {{-- @include('web.components.market') --}}
-
             <div class="line"></div>
             <div class="to-the-top">
                 <div class="button-to-the-top"></div>
@@ -217,37 +296,6 @@
             ]
 		});
 	</script>
-
-    {{-- <!-- Log In -->
-    <div class="modal_window icon-modal-login" id="login_modal">
-        <h3>ACCOUNT PANEL</h3>
-        <div class='modal_form'>
-            <div class="formGroup error">
-                <span class="formGroup-name">Nickname</span>
-                <input type="text" name="login">
-                <div class="errorGroup">
-                    <span class="color-red">Error!</span> A user with this name was not found in the game database of the server.
-                </div>
-            </div>
-            <div class="formGroup">
-                <span class="formGroup-name">Password</span>
-                <input type="password" name="pass">
-            </div>
-            <div class="formGroup">
-                <span class="formGroup-name">Server</span>
-                <select>
-                    <option>Main x50</option>
-                </select>
-            </div>
-            <div class="flex-s-c formGroup-button">
-                <p class="agree"> <input type="checkbox" class="checkbox" id="agree" name="agree" checked>
-                    <label for="agree"></label> Remember me.
-                </p>
-                <a href="" class="lost-pass">Lost password?</a>
-                <button class="button">Sign in</button>
-            </div>
-        </div>
-    </div> --}}
 
 </body>
 </html>
