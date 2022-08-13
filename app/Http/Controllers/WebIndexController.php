@@ -25,6 +25,8 @@ class WebIndexController extends Controller
                                 ->get();
         // guilds
         $guilds = cabalGuild::orderBy('Point', 'DESC')
+                                ->whereRaw('GuildName not like ?',"%STAFF%")
+                                ->whereRaw('GuildName not like ?',"%HYPE%")
                                 ->take(10)
                                 ->get();
         // count player on
@@ -48,8 +50,11 @@ class WebIndexController extends Controller
                 ->orderBy('Reputation', 'DESC')
                 ->take(10)
                 ->get();
+
         // guilds
         $guilds = cabalGuild::orderBy('Point', 'DESC')
+                ->whereRaw('GuildName not like ?',"%STAFF%")
+                ->whereRaw('GuildName not like ?',"%HYPE%")
                 ->take(10)
                 ->get();
 
