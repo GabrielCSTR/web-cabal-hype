@@ -54,12 +54,12 @@
             </div>
             <div class="menuContent">
                 <ul class="menu flex-c-c">
-                    <li class="{{ (request()->is('home')) ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
+                    <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
                     <li class="{{ (request()->is('download')) ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
                     <li><a href="">RANKINGS</a></li>
                     {{-- <li><a href="">Top Guilds</a></li>
-                    <li><a href="">sobre</a></li>
-                    <li><a href="">forum</a></li> --}}
+                    <li><a href="">sobre</a></li> --}}
+                    <li><a href="">forum</a></li>
                 </ul>
             </div>
             <div class="top_panel-right flex">

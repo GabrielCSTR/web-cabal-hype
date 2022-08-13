@@ -426,10 +426,10 @@ a.sign-in:hover{
   transition: 0.3s;
 }
 .reg-block .iso {
-  background: url(../images/icon-iso.png) center no-repeat;
+  background: url(../images/icon-dw.png) center no-repeat;
 }
 .reg-block .android {
-  background: url(../images/icon-android.png) center no-repeat;
+  background: url(../images/icon-dw.png) center no-repeat;
 }
 
 /* end icon login*/
