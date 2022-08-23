@@ -179,7 +179,7 @@ a {
   transition: all 0.3s ease;
 }
 .logo img{
-	width:500px;
+	width: 450px;
     height: 450px;
 }
 .logo:hover {
@@ -2211,3 +2211,7 @@ background: url(../images/hidden-block-log-in.png) no-repeat;
   }
 }
 /*end animation*/
+
+.mr-5{
+    right: 15px;
+}

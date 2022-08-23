@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'cabalAuth',
     ],
 
     /*
@@ -38,7 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'cabalAuth',
+        ],
+
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'cabalAuth',
         ],
     ],
 
@@ -60,9 +65,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'cabalAuth' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\cabalAuth::class,
         ],
 
         // 'users' => [
@@ -87,8 +92,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'cabalAuth' => [
+            'provider' => 'cabalAuth',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

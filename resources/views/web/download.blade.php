@@ -59,7 +59,7 @@
                     <li><a href="">RANKINGS</a></li>
                     {{-- <li><a href="">Top Guilds</a></li>
                     <li><a href="">sobre</a></li> --}}
-                    <li><a href="">forum</a></li>
+                    {{-- <li><a href="">forum</a></li> --}}
                 </ul>
             </div>
             <div class="top_panel-right flex">
@@ -71,11 +71,11 @@
                 </div>
                 <div class="topPanel-wrapper_right flex-c">
                 <a href="" onclick="new modal('#sign_up_modal');return false" class="sign-in">CADASTRO</a>
-                <span>OU</span>
+                {{-- <span>OU</span> --}}
                 {{-- <a href="" onclick="new modal('#');return false" class="button">LOGIN</a> --}}
-                <button class="button" id="loginMain">
+                {{-- <button class="button" id="loginMain">
                     {{ __('LOGIN') }}
-                </button>
+                </button> --}}
             </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
 			<div class="logo">
 				<a href="/"><img src="{{ asset('images/logo-1.png') }}" alt=""></a>
             </div>
-            <div class="server-time">server time <span>00:00:00 00 00</span></div>
+            {{-- <div class="server-time">server time <span>00:00:00 00 00</span></div> --}}
             <div class="sparks sparks_2">
                 <div class="spark_1"></div>
                 <div class="spark_2"></div>
@@ -96,14 +96,14 @@
             <div class="ray"></div>
         </header><!-- .header-->
         <main class="content">
-            <div class="fast-button flex-s">
-                <div class="btn-download"><a class="" target="_blank" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing"><span>Game client 3.45Gb</span></a></div>
+            {{-- <div class="fast-button flex-s">
+                <div class="btn-download"><a class="" target="_blank" href="https://drive.google.com/file/d/1gEmLlF2N1sNDpgh5HWVcQMuywSdNZtkF/view?usp=sharing"><span>Game client 3.45Gb</span></a></div>
                 <div class="reg-block">
-                    <a  target="_blank" href="https://www.mediafire.com/file/fx72bf39w15r7ic/PATCH_01.zip/file"><div class="b-icons iso"></div>
+                    <a  target="_blank" href="https://www.mediafire.com/file/uncbleji6g3lfse/Cabal_Hype.7z/file"><div class="b-icons iso"></div>
                         <span>download GoogleDrive</span>
                         <span class="b-icons-text"> PATCH</span>
                     </a>
-                    <a target="_blank" href="https://www.mediafire.com/file/fx72bf39w15r7ic/PATCH_01.zip/file"><div class="b-icons android"></div>
+                    <a target="_blank" href="https://mega.nz/file/m18R0JYL#19xxluWCgWOSfiFbUpy4KRJssZet8fCQlv8NEh6Xko8"><div class="b-icons android"></div>
                         <span>download MediaFire</span>
                         <span class="b-icons-text"> PATCH</span>
                     </a>
@@ -132,7 +132,7 @@
                         </div><!-- radial-stat -->
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="widgets_news flex-s">
                 <div class="widget-panel-left">
@@ -209,15 +209,15 @@
 
                                 <div class="google-drive">
                                     <p>Download Mirror 1 [Google Drive]: <a href="#">Download - 3.45 GB</a></p>
-                                    <a target="_blank" hreg="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing" class="btn-download-file">Download Client</a>
+                                    <a target="_blank" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing" class="btn-download-file">Download Client</a>
                                 </div>
                                 <div class="mega">
                                     <p>Download Mirror 2 [MediaFire]: <a href="#">Download - 3.45 GB</a></p>
-                                    <a target="_blank" hreg="https://www.mediafire.com/file/uncbleji6g3lfse/Cabal_Hype.7z/file" class="btn-download-file">Download Client</a>
+                                    <a target="_blank" href="https://www.mediafire.com/file/uncbleji6g3lfse/Cabal_Hype.7z/file" class="btn-download-file">Download Client</a>
                                 </div>
                                 <div class="dropbox">
                                     <p>Download Mirror 3 [PATCH]: Download: <a href="#">Download - 1.45 GB</a></p>
-                                    <a target="_blank" hreg="#" class="btn-download-file">Download Patch</a>
+                                    <a target="_blank" href="#" class="btn-download-file">Download Patch</a>
                                 </div>
                             </div>
                             <div class="drivers-block">

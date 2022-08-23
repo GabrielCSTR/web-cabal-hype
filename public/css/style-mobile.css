@@ -139,6 +139,15 @@
   .ray {
     display: none;
   }
+
+  .logo {
+    top: 140px;
+    left: 60px;
+  }
+  .logo img {
+    width: 350px;
+    height: 350px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -208,10 +217,13 @@
   }
 
   .logo {
-    top: 20px;
+    top: 140px;
+    left: 60px;
   }
   .logo img {
-    width: 70%;
+    /* width: 70%; */
+    width: 350px;
+    height: 350px;
   }
 
   .drivers {
@@ -285,4 +297,17 @@
   .topPanel-wrapper_right span {
     margin: 0 15px;
   }
+
+  .logo{
+    position: absolute;
+    top: 140px;
+    left: 35px;
+    transition: all 0.3s ease;
+  }
+
+  .logo img{
+	  width:350px;
+      height: 350px;
+  }
+
 }

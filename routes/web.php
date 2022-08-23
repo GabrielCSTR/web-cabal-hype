@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WebIndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +19,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('web.index');
 // })->name('home');
 
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
 /**
  * ROUTES WEB
  */
-route::get('/', [WebIndexController::class, 'index'])->name('web.home');
-route::get('/download', [WebIndexController::class, 'download'])->name('web.download');
-route::post('/register', [AuthController::class, 'register'])->name('web.register');
+route::get('/',             [WebIndexController::class, 'index'])->name('web.home');
+route::get('/download',     [WebIndexController::class, 'download'])->name('web.download');
+
+route::get('active/{key}/{account}',     [WebIndexController::class, 'activeAccountView'])->name('web.active.index');
+route::post('active/{account}/active',   [WebIndexController::class, 'activeAccount'])->name('web.active');

@@ -59,7 +59,7 @@
                     <li><a href="">RANKINGS</a></li>
                     {{-- <li><a href="">Top Guilds</a></li>
                     <li><a href="">sobre</a></li> --}}
-                    <li><a href="">forum</a></li>
+                    {{-- <li><a href="">forum</a></li> --}}
                 </ul>
             </div>
             <div class="top_panel-right flex">
@@ -69,14 +69,46 @@
                     <a href="" class="twch"></a>
                     <a href="" class="yt"></a>
                 </div>
-                <div class="topPanel-wrapper_right flex-c">
-                <a href="" onclick="new modal('#sign_up_modal');return false" class="sign-in">CADASTRO</a>
-                <span>OU</span>
-                {{-- <a href="" onclick="new modal('#');return false" class="button">LOGIN</a> --}}
-                <button class="button" id="loginMain">
-                    {{ __('LOGIN') }}
-                </button>
-            </div>
+                @if (Auth::check())
+
+                    <div class="log-in flex-s-c">
+                        <ul class="menulog-in flex-s-c" >
+                            <li class="log-in-menu-1">
+                                <a href="javascript:void(0);" class="main-item-log-in">{{ Auth::user()->ID }}</a>
+                                <ul class="hidden-block-log-in">
+                                    <div class="icon-login-big flex-s-c">
+                                        <img src="images/icon-login.jpg" alt="">
+                                        <p class="icon-text">{{ Auth::user()->ID }}<br><span>{{ Auth::user()->Email }}</span></p>
+                                    </div>
+                                    <li><a href="{{ route('dashboard') }}">User Panel</a></li>
+                                    <li><a href="#">Items Shop</a></li>
+                                    {{-- <li><a href="#">Admin Area</a></li> --}}
+                                    <a class="log-out" href="{{ route('web.logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                        <i class="ft-power"></i>
+                                        Log out
+                                    </a>
+                                    <form id="frm-logout" action="{{ route('web.logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </ul>
+                            </li>
+                        <ul>
+                        <div class="icon-log-in"><img src="images/icon-login.jpg" alt=""></div>
+                    </div>
+
+                    @else
+
+                    <div class="topPanel-wrapper_right flex-c">
+                        <a href="" onclick="new modal('#sign_up_modal');return false" class="button mr-5">CADASTRO</a>
+                        {{-- <span>OU</span> --}}
+                        <a href="" onclick="new modal('#login_modal');return false" class="button">LOGIN</a>
+                        {{-- <button class="button" id="loginMain">
+                            {{ __('LOGIN') }}
+                        </button> --}}
+                    </div>
+
+                @endif
+
             </div>
         </div>
 	</div><!-- top-panel -->
@@ -85,7 +117,7 @@
 			<div class="logo">
 				<a href="/"><img src="{{ asset('images/logo-1.png') }}" alt=""></a>
             </div>
-            <div class="server-time">server time <span>00:00:00 00 00</span></div>
+            {{-- <div class="server-time">server time <span>00:00:00 00 00</span></div> --}}
             <div class="sparks sparks_2">
                 <div class="spark_1"></div>
                 <div class="spark_2"></div>
@@ -96,7 +128,7 @@
             <div class="ray"></div>
         </header><!-- .header-->
         <main class="content">
-            <div class="fast-button flex-s">
+            {{-- <div class="fast-button flex-s">
                 <div class="btn-download"><a class="" target="_blank" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing"><span>Game client 3.45Gb</span></a></div>
                 <div class="reg-block">
                     <a  target="_blank" href="https://www.mediafire.com/file/fx72bf39w15r7ic/PATCH_01.zip/file"><div class="b-icons iso"></div>
@@ -132,7 +164,7 @@
                         </div><!-- radial-stat -->
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- NEWS --}}
             @include('web.components.news')
@@ -174,6 +206,8 @@
 
 
     @include('web.partials.register')
+
+    @include('web.partials.login')
 
     @yield('scripts')
 
@@ -218,8 +252,8 @@
 		});
 	</script>
 
-    {{-- <!-- Log In -->
-    <div class="modal_window icon-modal-login" id="login_modal">
+    <!-- Log In -->
+    {{-- <div class="modal_window icon-modal-login" id="login_modal">
         <h3>ACCOUNT PANEL</h3>
         <div class='modal_form'>
             <div class="formGroup error">

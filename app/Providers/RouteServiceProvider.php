@@ -46,6 +46,55 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            ////////////////////// ROTAS PAINEL WEB //////////////////////////////
+			/**
+			 * Rotas de Auth
+			 */
+			Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/Auth.php'));
+            /**
+			 * Rotas de Perfil
+			 */
+			Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/Profile.php'));
+
+            /**
+			 * Rotas de Chars
+			 */
+			Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/Chars.php'));
+
+            /**
+			 * Rotas de Donate
+			 */
+			Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/Donate.php'));
+
+             /**
+			 * Rotas de MercadoPago
+			 */
+			Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/MercadoPago.php'));
+
+            /**
+			 * Rotas de ManagerAdmin
+			 */
+			Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/Admin.php'));
+
+            /**
+			 * Rotas de SHOP
+			 */
+			Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/Shop.php'));
         });
     }
 

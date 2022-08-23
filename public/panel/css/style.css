@@ -1,0 +1,104 @@
+.background-login{
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(45deg, #007A4D 0%,#007A4D 35%, #3BA27E 35%, #3BA27E 45%,#5CAF8F 45%,#5CAF8F 55%,#87c3a9 55%,#87c3a9 65%, #fff 65%, #fff 100%); */
+    background: url('../images/fundo2.PNG'), url('../images/fundo1.PNG'), linear-gradient(60deg, #007A4D 0%,#007A4D 45%, #fff 45%, #fff 100%);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: left bottom, 95% 100%, right bottom, center;
+}
+
+.page { line-height: 1.5; background: url(../images/media-bg.jpg) center bottom no-repeat; }
+
+.page-container { padding: 20px 20px; background: linear-gradient(to bottom, white 50%, rgba(255, 255, 255, 0) 50%); min-height: 600px; }
+.page-container ul { margin-bottom: 20px; padding-left: 10px; }
+.page-container ul li { background: url(../images/dot-slider.png) left center no-repeat; padding: 5px 10px 5px 30px; }
+.page-container a { color: #dd6583; text-decoration: underline; }
+.page-container a:hover { text-decoration: none; }
+
+.market-container { background: linear-gradient(to bottom, white 50%, rgba(255, 255, 255, 0) 50%); min-height: 600px; }
+.market-content-title { text-align: center; margin-bottom: 50px; }
+.market-content-title span { position: relative; font-size: 18px; font-weight: bold; }
+.market-content-title span:before { content: ""; position: absolute; background: url(../images/line-r.png); width: 392px; height: 15px; left: calc(100% + 30px); top: 50%; margin-top: -7.5px; }
+.market-content-title span:after { content: ""; position: absolute; background: url(../images/line-l.png); width: 392px; height: 15px; right: calc(100% + 30px); top: 50%; margin-top: -7.5px; }
+
+.marketInfo { background: url(../images/title-img-opacity.png) center bottom no-repeat; padding: 35px 65px 45px 65px; }
+.marketInfo h1 { margin-bottom: 0px; text-transform: uppercase; color: #2c3844; font-size: 48px; letter-spacing: 2px; }
+
+.marketInfo-cart { background: url(../images/icon-cart.png) left center no-repeat; padding: 10px 0px 10px 55px; margin-left: 20px; line-height: 1; }
+.marketInfo-cart p { margin-bottom: 5px; font-weight: bold; }
+.marketInfo-cart a { color: #dd6583; font-size: 14px; text-decoration: underline; }
+.marketInfo-cart a:hover { text-decoration: none; }
+
+.marketInfo-deposit { border-top: 2px solid #eef0f1; border-bottom: 2px solid #eef0f1; position: relative; height: 58px; padding-left: 5px; margin-left: 30px; }
+.marketInfo-deposit:after { content: ""; position: absolute; background: url(../images/balance-bg-right.jpg); width: 29px; height: 58px; right: 4px; top: -2px; }
+.marketInfo-deposit:before { content: ""; position: absolute; background: url(../images/balance-bg-left.jpg); width: 29px; height: 58px; left: 0px; top: -2px; }
+
+.marketInfo-deposit_coins { position: relative; z-index: 2; height: 48px; background: url(../images/balance-y-bg.png); min-width: 140px; display: flex; align-items: center; color: #ca9619; font-weight: bold; font-size: 22px; padding-left: 20px; }
+.marketInfo-deposit_coins i { margin-right: 5px; }
+
+.icon-coin { background: url(../images/icon-coin.png); width: 36px; height: 39px; margin-top: 2px; }
+
+.marketInfo-profile_text { line-height: 1; }
+.marketInfo-profile_text p { margin-bottom: 5px; font-weight: bold; }
+.marketInfo-profile_text a { color: #dd6583; font-size: 14px; text-decoration: underline; }
+.marketInfo-profile_text a:hover { text-decoration: none; }
+
+.marketInfo-profile_img { margin-right: 15px; }
+.marketInfo-profile_img img { height: 46px; width: 46px; border-radius: 50%; box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); }
+
+.market-content { padding: 20px 70px 70px 70px; }
+
+.market-title { color: #2c3844; font-size: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 3px; display: flex; align-items: center; position: relative; margin-left: -10px; margin-bottom: 20px; }
+.market-title i { margin-right: 10px; }
+
+.icon-plus-dark { background: url(../images/plus-icon-dark.png) center no-repeat; width: 78px; height: 78px; }
+
+.depositBlocks { margin-left: -15px; margin-right: -15px; margin-bottom: 30px; }
+
+.depositBlock { background: url(../images/coins-bg.png) center no-repeat; width: 360px; height: 176px; position: relative; padding: 0px 20px 20px 35px; cursor: pointer; transition: 0.3s; margin: 1px; }
+.depositBlock:hover { background: url(../images/coins-bg-hover.png) center no-repeat; }
+.depositBlock:hover .depositBlock-price { color: #fff; }
+
+.depositBlock-coin { display: inline-block; width: 94px; height: 94px; }
+
+.coin-1 { background: url(../images/coin-1.png); }
+
+.coin-2 { background: url(../images/coin-2.png); }
+
+.coin-3 { background: url(../images/coin-3.png); }
+
+.coin-4 { background: url(../images/coin-4.png); }
+
+.coin-5 { background: url(../images/coin-5.png); }
+
+.depositBlock-price { position: absolute; width: 130px; height: 35px; left: 50%; margin-left: -65px; text-align: center; bottom: 8px; }
+
+.depositBlock-info { line-height: 1; padding-left: 5px; }
+.depositBlock-info p { margin-bottom: 5px; color: #ca9619; font-weight: bold; font-size: 30px; letter-spacing: 2px; }
+.depositBlock-info span { padding-left: 6px; color: #2c3844; font-size: 18px; font-weight: bold; }
+
+.depositBlock.active { background: url(../images/coins-bg-hover.png) center no-repeat; }
+.depositBlock.active .depositBlock-price { color: #fff; }
+.depositBlock.active .depositBlock-check { opacity: 1; }
+
+.depositBlock-check { background: url(../images/check-corner.png); width: 83px; height: 83px; position: absolute; top: -2px; left: -2px; transition: 0.3s; opacity: 0; }
+
+.market-content-title { text-align: center; margin-bottom: 50px; }
+.market-content-title span { position: relative; font-size: 18px; font-weight: bold; }
+.market-content-title span:before { content: ""; position: absolute; background: url(../images/line-r.png); width: 392px; height: 15px; left: calc(100% + 30px); top: 50%; margin-top: -7.5px; }
+.market-content-title span:after { content: ""; position: absolute; background: url(../images/line-l.png); width: 392px; height: 15px; right: calc(100% + 30px); top: 50%; margin-top: -7.5px; }
+
+.payMethod { margin-bottom: 50px; }
+
+.payMethod-block { background: url(../images/pay-bg.png); width: 270px; height: 126px; }
+
+.payMethod-blocks { margin-left: -15px; margin-right: -15px; }
+
+.payMethod-block { margin: 1px; position: relative; transition: 0.3s; }
+.payMethod-block:hover { background: url(../images/pay-bg-hover.png); }
+
+.payMethod-block.active { background: url(../images/pay-bg-hover.png); }
+.payMethod-block.active .depositBlock-check { opacity: 1; }

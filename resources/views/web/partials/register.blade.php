@@ -87,7 +87,7 @@
             event.preventDefault();
 
             let formData = $('#registerForm').serializeArray();
-            console.log(formData);
+            // console.log(formData);
             $.ajax({
                 method: "POST",
                 headers: {
@@ -122,8 +122,39 @@
 
         $(document).on('click', '#loginMain', function(event) {
             event.preventDefault();
+            let formData = $('#loginForm').serializeArray();
 
-            toastr.success("Login desativado, Em breve sera liberado!");
+            $.ajax({
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{ route('web.login') }}",
+                data: formData,
+                success: function(resp) {
+                    if (resp.success) {
+                        toastr.success(resp.message);
+                        setTimeout(function() { // wait for 3 secs(2)
+                            // location.reload(); // then reload the page.(3)
+                            window.location.href = "{{ route('dashboard') }}";
+                        }, 2000);
+                    } else {
+                        toastr.error(resp.message);
+                    }
+                },
+                error: (response) => {
+                    if (response.status === 422) {
+                        let errors = response.responseJSON.errors;
+                        Object.keys(errors).forEach(function(key) {
+                            console.log(key);
+                            $("#" + key + "Error").addClass("errorGroup");
+                            $("#" + key + "Error").children("strong").text(errors[
+                                key][0]);
+                        });
+                    }
+                }
+            })
         });
     })
     </script>

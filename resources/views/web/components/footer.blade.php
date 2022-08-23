@@ -1,20 +1,20 @@
 <footer class="footer">
-    <div class="footer-block-t">
+    {{-- <div class="footer-block-t">
         <ul class="payment">
             <li class="visa"><a href="#"></a></li>
             <li class="mastercard"><a href="#"></a></li>
             <li class="g2apay"><a href="#"></a></li>
             <li class="entergames"><a href="#"></a></li>
         </ul>
-    </div>
+    </div> --}}
     <div class="footer-block-t">
         <ul class="f-menu">
             <li><a href="">Home</a></li>
-            <li><a href="">Cadastro</a></li>
+            {{-- <li><a href="">Cadastro</a></li> --}}
             <li><a href="">Download</a></li>
             <li><a href="">Ranking</a></li>
-            <li><a href="">Forum</a></li>
-            <li><a href="">Contato</a></li>
+            {{-- <li><a href="">Forum</a></li> --}}
+            {{-- <li><a href="">Contato</a></li> --}}
         </ul>
     </div>
     <div class="bottom-footer flex-s-c">
