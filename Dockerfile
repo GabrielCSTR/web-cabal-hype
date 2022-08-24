@@ -39,6 +39,29 @@ RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
+# Add the script to the Docker Image
+ADD cron_mercadopago.sh /root/cron_mercadopago.sh
+
+# Give execution rights on the cron scripts
+RUN chmod 0644 /root/cron_mercadopago.sh
+
+#Install Cron
+RUN apt-get -y install systemd
+RUN apt-get -y install nano
+RUN apt-get -y install cron
+RUN apt-get -y install curl
+
+RUN systemctl enable cron
+
+# Create the log file to be able to run tail
+RUN touch /var/log/cron_mercadopago.log
+
+# Add the cron job
+RUN crontab -l | { cat; echo "* * * * * bash /root/cron_mercadopago.sh"; } | crontab -
+
+# Run the command on container startup
+CMD cron && tail -f /var/log/cron.log
+
 # Set working directory
 WORKDIR /var/www
 
