@@ -172,10 +172,10 @@ class ShopController extends Controller
                 $account = Auth::user(); // get user infos
 
                 // send itens
-                for ($i=1; $i < $product['quantity']; $i++)
+                for ($i=1; $i <= $product['quantity']; $i++)
                 {
-                    DB::select(
-                        DB::raw("EXEC strdeveloped_shop.dbo.strdeveloped_senditem '$account->ID','$product_item->ItemIDX', '$product_item->OptionIDX', '$product_item->Duration', '0', '1', '0' ")
+                    DB::update(
+                        DB::raw("USE [CabalCash]exec  up_AddMyCashItemByItem '".$account->UserNum."', '1', '1', '".$product_item->ItemIDX."', '".$product_item->OptionIDX."', '".$product_item->Duration."' ")
                     );
                 }
 
@@ -189,7 +189,7 @@ class ShopController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => "Item(s) comprado com sucesso - Cabal Heaven!",
+                'message' => "Item(s) comprado com sucesso - Cabal Hype!",
             ]);
         }
     }
