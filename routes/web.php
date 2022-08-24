@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MercadoPagoController;
 use App\Http\Controllers\WebIndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,6 @@ route::get('/download',     [WebIndexController::class, 'download'])->name('web.
 
 route::get('active/{key}/{account}',     [WebIndexController::class, 'activeAccountView'])->name('web.active.index');
 route::post('active/{account}/active',   [WebIndexController::class, 'activeAccount'])->name('web.active');
+
+// CALLBACK MERCADO PAGO
+Route::get('/callbackMessage', [WebIndexController::class, 'callback'])->name('callback');

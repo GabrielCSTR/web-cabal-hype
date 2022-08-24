@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\cabalAuth;
+use App\Models\cabalCash;
 use App\Models\cabalCharacter;
 use App\Models\cabalGuild;
+use App\Models\Plans;
+use App\Models\Transations;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WebIndexController extends Controller
 {
@@ -92,7 +97,7 @@ class WebIndexController extends Controller
 
             if(!$user)
             {
-                return redirect()->route('web.home')->with('success', 'Pagina não existe!');
+                return redirect()->route('web.home')->with('success', 'Pagina nÃ£o existe!');
             }
             else
             {
@@ -119,15 +124,85 @@ class WebIndexController extends Controller
             {
                 $user->is_active = 1;
                 $user->save();
-                return redirect()->route('web.home')->with('success', 'Pagina não existe!');
+                return redirect()->route('web.home')->with('success', 'Pagina nÃ£o existe!');
             }
             else
             {
-                return redirect()->route('web.home')->with('success', 'Pagina não existe!');
+                return redirect()->route('web.home')->with('success', 'Pagina nÃ£o existe!');
             }
 
         }
 
-        return redirect()->route('web.home')->with('success', 'Pagina não existe!');
+        return redirect()->route('web.home')->with('success', 'Pagina nÃ£o existe!');
+    }
+
+    public function callback(Request $request)
+    {
+        $payment_pedents[]= null; // save all payment pendents
+        $transations = Transations::where('status', '0')->get(); // get all transations status PENDENTE
+
+        // save transations status PENDETE
+        foreach ($transations as $transation) {
+           $payment_pedents[] = $transation->id_payment;
+        }
+
+        // LIMPANDO DADOS
+        $payment_pedents = array_filter($payment_pedents, 'strlen');
+
+        foreach ($payment_pedents as $payment) {
+
+            $mercadoPagoData = $this->getMercadoPagoData($payment); // GET DATA MERCADOPAGO
+
+            //CHECK PAYMENT VALIDATE APPROVED
+            if($mercadoPagoData['status'] == "approved" &&
+               $mercadoPagoData['status_detail'] == "accredited"
+               ) // CHECK VALIDATION
+            {
+                $transation = Transations::where('id_payment', $payment)
+                                        ->where('status', '0')
+                                        ->first(); // CONFIG TRANSATION ID DADOS
+
+                if($transation) // CHECK TRANSATION
+                {
+                    // PEGANDO DADOS PACOTE COMPRADO
+                    $pacote = Plans::find($transation->id_pacote);
+
+                    // UPDATE TRANSATION STATUS PAGO
+                    $transation->status = 1;
+                    $transation->save();
+
+                    // UPDATE CASH PLAYER
+                    $cash = cabalCash::where('UserNum', $transation->id_user)
+                                    ->update(['Cash' => DB::raw( 'Cash +'. $pacote->Cash )]);
+
+                    return 'SUCESS PAYMENT';
+                }
+                else
+                {
+                    redirect()->to('/')->send();
+                }
+            }
+
+        }
+    }
+
+    function getMercadoPagoData($payment)
+    {
+        // GET API MERCADO PAGO
+        $headers[] = 'Accept: application/json';
+        $headers[] = 'Content-Type: application/json';
+        $headers[] = 'Authorization: Bearer ' . env('MP_CLIENT_SECRET');
+
+        $ch = curl_init("https://api.mercadopago.com/v1/payments/". $payment);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        $mercadoPagoData = json_decode($result, true); // DADOS MERCADOPAGO
+
+        return $mercadoPagoData;
     }
 }

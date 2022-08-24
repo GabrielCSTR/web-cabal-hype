@@ -62,7 +62,7 @@ class MercadoPagoGateway
             );
 
             $payment->external_reference    = $external_reference;
-            $payment->notification_url      = route('callback');
+            //$payment->notification_url      = route('callback');
 
             // $todayDate = Carbon::now();
             // $todayDate->addDays(1);
@@ -75,6 +75,7 @@ class MercadoPagoGateway
             $transation->id_ref     = $external_reference;
             $transation->id_pacote  = $pacote;
             $transation->status     = 0;
+            $transation->created_at = Carbon::now();
             $transation->save();
 
             return $payment;
