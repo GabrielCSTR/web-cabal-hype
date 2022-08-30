@@ -106,9 +106,18 @@ class AdminController extends Controller
 
     public function indexTransations()
     {
-        $shopLogsTransations = Transations::all();
+        $shopLogsTransations = Transations::orderBy('created_at', 'DESC')->get();
 
-        return view('painel.admin.shop.transations', compact('shopLogsTransations'));
+        $total_faturado = 0;
+        foreach ($shopLogsTransations as $key => $item) {
+            if($item->getPacote && $item->status == 1)
+            {
+                $valor = str_replace('$', '', $item->getPacote->Price);
+                $total_faturado = ((int)$valor + (int)$total_faturado);
+            }
+        }
+
+        return view('painel.admin.shop.transations', compact('shopLogsTransations', 'total_faturado'));
     }
 
     public function donatePlans()

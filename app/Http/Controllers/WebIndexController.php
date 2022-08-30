@@ -17,7 +17,7 @@ class WebIndexController extends Controller
     {
         // ranking
         $rankings = cabalCharacter::where('Nation', '!=', '3')
-                                ->where('LEV', '<', '200')
+                                //->where('LEV', '<', '200')
                                 ->whereRaw('name not like ?',"%HYPE%")
                                 ->whereRaw('name not like ?',"%Vara%")
                                 ->whereRaw('name not like ?',"%Dexter%")
@@ -37,14 +37,21 @@ class WebIndexController extends Controller
         $playersON = cabalCharacter::where('Login', '1')
                                 ->count();
 
-        return view('web.index', compact('rankings', 'guilds', 'playersON'));
+        $playerAlzs = cabalCharacter::orderBy('Alz', 'DESC')
+                                    ->whereRaw('name not like ?',"%HYPE%")
+                                    ->whereRaw('name not like ?',"%[DEV]%")
+                                    ->whereRaw('name not like ?',"%[GM]%")
+                                    ->take(10)
+                                    ->get();
+
+        return view('web.index', compact('rankings', 'guilds', 'playersON', 'playerAlzs'));
     }
 
     public function download()
     {
         // ranking
         $rankings = cabalCharacter::where('Nation', '!=', '3')
-                ->where('LEV', '<', '200')
+                //->where('LEV', '<', '200')
                 ->whereRaw('name not like ?',"%HYPE%")
                 ->whereRaw('name not like ?',"%Vara%")
                 ->whereRaw('name not like ?',"%Dexter%")
@@ -69,7 +76,7 @@ class WebIndexController extends Controller
     {
         // ranking
         $rankings = cabalCharacter::where('Nation', '!=', '3')
-                ->where('LEV', '<', '200')
+                //->where('LEV', '<', '200')
                 ->whereRaw('name not like ?',"%HYPE%")
                 ->whereRaw('name not like ?',"%Vara%")
                 ->whereRaw('name not like ?',"%Dexter%")
@@ -204,5 +211,38 @@ class WebIndexController extends Controller
         $mercadoPagoData = json_decode($result, true); // DADOS MERCADOPAGO
 
         return $mercadoPagoData;
+    }
+
+    public static function format_timeSince($Minutes)
+    {
+        if ($Minutes < 0)
+        {
+            $Min = Abs($Minutes);
+        }
+        else
+        {
+            $Min = $Minutes;
+        }
+        $iHours = Floor($Min / 60);
+        $Minutes = ($Min - ($iHours * 60)) / 100;
+        $tHours = $iHours + $Minutes;
+        if ($Minutes < 0)
+        {
+            $tHours = $tHours * (-1);
+        }
+        $aHours = explode(".", $tHours);
+        $iHours = $aHours[0];
+        if (empty($aHours[1]))
+        {
+            $aHours[1] = "00";
+        }
+        $Minutes = $aHours[1];
+        if (strlen($Minutes) < 2)
+        {
+            $Minutes = $Minutes ."0";
+        }
+    $tHours = $iHours ."h ". $Minutes."m";
+
+        return $tHours;
     }
 }

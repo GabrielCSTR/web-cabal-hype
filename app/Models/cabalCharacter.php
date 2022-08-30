@@ -9,8 +9,6 @@ class cabalCharacter extends Model
 {
     use HasFactory;
 
-    use HasFactory;
-
     protected $connection = 'sqlsrv_server01';
     public $timestamps = false;
 

@@ -71,50 +71,14 @@
     </div>
     <div class="widget-block">
         <div class="info-widget-block top-event flex-s">
-            <h2 class="title-widget-block">Event</h2>
+            <h2 class="title-widget-block">Ricos do Servidor</h2>
             <input type="button" class="add">
         </div>
         <ul class="event-timers">
-            {{-- <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li>
-            <li>
-                <p><span class="event-title">boldBlood</span><span class="time-start-event">12:00 AM</span></p>
-                <p><span class="starts-in">Starts in</span><span class="time-to-event">0 hrs 20 min 20 sec</span></p>
-            </li> --}}
+            @foreach ($playerAlzs as $key => $playerAlz)
+                <p><span class="event-title">{{ $playerAlz->Name }}</span><span class="time-start-event">{{ number_format($playerAlz->Alz) }} Alzes</span></p>
+                <p><span class="starts-in">Player Time</span><span class="time-to-event">{{ \App\Http\Controllers\WebIndexController::format_timeSince($playerAlz['PlayTime']) }}</span></p>
+            @endforeach
         </ul>
     </div>
 </div>

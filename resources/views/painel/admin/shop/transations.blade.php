@@ -32,7 +32,12 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Lista dos Items</h4>
+                    <h4 class="card-title">Lista dos Items <b>TOTAL VENDAS:
+                        <div class="badge badge-warning round">
+                            <span><b>${{ number_format($total_faturado) }}</b></span>
+                            <i class="la la-money font-medium-2"></i>
+                        </div>
+                        </b></h4>
                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     <div class="heading-elements">
                         <ul class="list-inline mb-0">
@@ -47,29 +52,43 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nome</th>
-                                    <th>Descrição</th>
-                                    <th>Preço</th>
-                                    <th>ItemIDX</th>
-                                    <th>OptionIDX</th>
-                                    <th>Ações</th>
+                                    <th>Account</th>
+                                    <th>ID Pagamento</th>
+                                    <th>ID Referencia</th>
+                                    <th>Pacote</th>
+                                    <th>Valor Pago</th>
+                                    <th>Cash</th>
+                                    <th>Status</th>
+                                    <th>Data Compra</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($products as $key => $product)
+                                @foreach ($shopLogsTransations as $key => $log)
                                     <tr>
                                         <td>{{ $key }}</td>
-                                        <td>{{ $product->Name }}</td>
-                                        <td>{{ $product->Description }}</td>
-                                        <td>{{ $product->Price }}</td>
-                                        <td>{{ $product->ItemIDX }}</td>
-                                        <td>{{ $product->OptionIDX }}</td>
+                                        <td>{{ $log->getAccount->ID }}</td>
+                                        <td><b>{{ $log->id_payment }}</b></td>
+                                        <td><b>{{ $log->id_ref }}</b></td>
+                                        <td>{{ $log->getPacote ? $log->getPacote->Name : 'N/A' }}</td>
+                                        <td>{{ $log->getPacote ? $log->getPacote->Price : 'N/A' }}</td>
+                                        <td>{{ $log->getPacote ? $log->getPacote->Cash : 'N/A' }}</td>
                                         <td>
-                                            <button class="btn btn-danger btn-flat btn-sm remove-category"
-                                                data-id="{{ $product->ProductID }}">Deletar</button>
+                                            @if ($log->status == '1')
+                                            <div class="badge badge-success round">
+                                                <span>ENTREGUE</span>
+                                                <i class="la la-money font-medium-2"></i>
+                                            </div>
+                                            @else
+                                                <div class="badge badge-danger round">
+                                                    <span>CANCELADO</span>
+                                                    <i class="la la-money font-medium-2"></i>
+                                                </div>
+                                            @endif
+
                                         </td>
+                                        <td>{{ $log->created_at }}</td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
