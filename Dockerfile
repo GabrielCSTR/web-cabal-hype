@@ -1,8 +1,10 @@
 FROM php:7.4-fpm-buster
 
-# Arguments defined in docker-compose.yml
-ARG user=strdev
-ARG uid=1000
+# Copy composer.lock and composer.json
+COPY composer.lock composer.json /var/www/
+
+# Set working directory
+WORKDIR /var/www
 
 ENV ACCEPT_EULA=Y
 
@@ -26,43 +28,22 @@ RUN chmod uga+x /usr/bin/install-php-extensions \
     && sync \
     && install-php-extensions bcmath exif gd imagick intl opcache pcntl pdo_sqlsrv redis sqlsrv zip
 
-# Get latest Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
+# Add user for laravel application
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
 
-# Install redis
-RUN pecl install -o -f redis \
-    &&  rm -rf /tmp/pear \
-    &&  docker-php-ext-enable redis
+# Copy existing application directory contents
+COPY . /var/www
 
-# Add the script to the Docker Image
-ADD cron_mercadopago.sh /root/cron_mercadopago.sh
+# Copy existing application directory permissions
+COPY --chown=www:www . /var/www
 
-# Give execution rights on the cron scripts
-RUN chmod 0644 /root/cron_mercadopago.sh
+# Change current user to www
+USER www
 
-#Install Cron
-RUN apt-get -y install systemd
-RUN apt-get -y install nano
-RUN apt-get -y install cron
-RUN apt-get -y install curl
-
-RUN systemctl enable cron
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron_mercadopago.log
-
-# Add the cron job
-RUN crontab -l | { cat; echo "* * * * * bash /root/cron_mercadopago.sh"; } | crontab -
-
-# Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
-
-# Set working directory
-WORKDIR /var/www
-
-USER $user
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]
