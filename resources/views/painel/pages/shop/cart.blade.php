@@ -35,15 +35,15 @@
                     <tr>
                         <th style="width:50%">Produtos</th>
                         <th style="width:10%">Preço</th>
-                        <th style="width:8%">Quantidade</th>
+                        {{-- <th style="width:8%">Quantidade</th> --}}
                         <th style="width:22%" class="text-center">Subtotal</th>
                         <th style="width:10%"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @php $total = 0 @endphp
-                    @if (session('cart'))
-                        @foreach (session('cart') as $id => $details)
+                    @if ($itemsCart->count() > 0)
+                        @foreach ($itemsCart as $id => $details)
                             @php $total += $details['price'] * $details['quantity'] @endphp
                             <tr data-id="{{ $id }}">
                                 <td data-th="Product">
@@ -58,10 +58,10 @@
                                     </div>
                                 </td>
                                 <td data-th="Price">${{ $details['price'] }}</td>
-                                <td data-th="Quantity">
+                                {{-- <td data-th="Quantity">
                                     <input type="number" value="{{ $details['quantity'] }}"
                                         class="form-control quantity update-cart" />
-                                </td>
+                                </td> --}}
                                 <td data-th="Subtotal" class="text-center">
                                     ${{ $details['price'] * $details['quantity'] }}</td>
                                 <td class="actions" data-th="">
@@ -80,7 +80,7 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right" data-th="">
-                            <a href="{{ url('/shop/1') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i>
+                            <a href="{{ url('/shop/5') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i>
                                 Continue Comprando</a>
                             <button class="btn btn-success buy-product">Comprar</button>
                         </td>
@@ -93,24 +93,24 @@
 
 @section('scripts')
     <script type="text/javascript">
-        $(".update-cart").change(function(e) {
-            e.preventDefault();
+        // $(".update-cart").change(function(e) {
+        //     e.preventDefault();
 
-            var ele = $(this);
+        //     var ele = $(this);
 
-            $.ajax({
-                url: '{{ route('update.cart') }}',
-                method: "patch",
-                data: {
-                    _token: '{{ csrf_token() }}',
-                    id: ele.parents("tr").attr("data-id"),
-                    quantity: ele.parents("tr").find(".quantity").val()
-                },
-                success: function(response) {
-                    window.location.reload();
-                }
-            });
-        });
+        //     $.ajax({
+        //         url: '{{ route('update.cart') }}',
+        //         method: "patch",
+        //         data: {
+        //             _token: '{{ csrf_token() }}',
+        //             id: ele.parents("tr").attr("data-id"),
+        //             quantity: ele.parents("tr").find(".quantity").val()
+        //         },
+        //         success: function(response) {
+        //             window.location.reload();
+        //         }
+        //     });
+        // });
 
         $(".remove-from-cart").click(function(e) {
             e.preventDefault();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\cabalCash;
 use App\Models\cabalCashLog;
+use App\Models\ShopCart;
 use App\Models\ShopCategory;
 use App\Models\ShopProducts;
 use Carbon\Carbon;
@@ -35,36 +36,51 @@ class ShopController extends Controller
 
         $page = $id;
         $categoryName = ShopCategory::where('ProductCategoryID', $id)->first();
+        $itemsCart = ShopCart::where('account', Auth::user()->UserNum)->count();
 
-        return view('painel.pages.shop.index', compact('cash', 'categorys', 'products', 'page', 'categoryName'));
+        return view('painel.pages.shop.index', compact('cash', 'categorys', 'products', 'page', 'categoryName', 'itemsCart'));
     }
 
     public function cart()
     {
-        return view('painel.pages.shop.cart');
+        $itemsCart = ShopCart::where('account', Auth::user()->UserNum)->get();
+        return view('painel.pages.shop.cart', compact('itemsCart'));
     }
 
     public function addToCart($id)
     {
         $product = ShopProducts::where('ProductID', $id)->first();
 
-        $cart = session()->get('cart', []);
+        // $cart = session()->get('cart', []);
 
-        if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
-        } else {
-            $cart[$id] = [
-                "Name"          => $product->Name,
-                "ProductID"     =>  $product->ProductID,
-                "description"   => $product->Description,
-                "quantity"      => 1,
-                "price"         => $product->Price,
-                "image"         => $product->Image,
-                "time"          => $product->Duration
-            ];
-        }
+        // if(isset($cart[$id])) {
+        //     $cart[$id]['quantity']++;
+        // } else {
+        //     $cart[$id] = [
+        //         "Name"          => $product->Name,
+        //         "ProductID"     => $product->ProductID,
+        //         "description"   => $product->Description,
+        //         "quantity"      => 1,
+        //         "price"         => $product->Price,
+        //         "image"         => $product->Image,
+        //         "time"          => $product->Duration
+        //     ];
+        // }
 
-        session()->put('cart', $cart);
+        // session()->put('cart', $cart);
+
+        $item = [
+            "Name"          => $product->Name,
+            "account"       => Auth::user()->UserNum,
+            "ProductID"     => $product->ProductID,
+            "description"   => $product->Description,
+            "quantity"      => 1,
+            "price"         => $product->Price,
+            "image"         => $product->Image,
+            "time"          => $product->Duration
+        ];
+
+        ShopCart::create($item); // add to cart shop
 
         return redirect()->back()->with('success', 'Produto adicionado no carrinho com sucesso!');
     }
@@ -82,21 +98,24 @@ class ShopController extends Controller
     public function remove(Request $request)
     {
         if($request->id) {
-            $cart = session()->get('cart');
-            if(isset($cart[$request->id])) {
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
-            }
+            // $cart = session()->get('cart');
+            // if(isset($cart[$request->id])) {
+            //     unset($cart[$request->id]);
+            //     session()->put('cart', $cart);
+            // }
+            ShopCart::where('account', Auth::user()->UserNum)
+                    ->where('id', $request->id)->delete();
+
             session()->flash('success', 'Produto removido com sucesso');
         }
     }
 
     public function buyProduct(Request $request)
     {
-        $cart = session()->get('cart');
+        $cart = ShopCart::where('account', Auth::user()->UserNum)->count();
         if($cart)
         {
-            $products = session()->get('cart');
+            $products =  ShopCart::where('account', Auth::user()->UserNum)->get();
             $total = 0;
 
             $cash = cabalCash::where('ID', Auth::user()->ID)
@@ -180,10 +199,10 @@ class ShopController extends Controller
                 }
 
                 // remove itens cart
-                if(isset($cart[$key])) {
-                    unset($cart[$key]);
-                    session()->put('cart', $cart);
-                }
+                // if(isset($cart[$key])) {
+                //     unset($cart[$key]);
+                //     session()->put('cart', $cart);
+                // }
 
             }
 

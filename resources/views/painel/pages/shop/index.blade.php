@@ -50,7 +50,8 @@
             <div class="marketInfo-cart">
                 <p>Carrinho</p>
                 @php $total = 0 @endphp
-                <a href="{{ route('cart.index') }}">({{ count((array) session('cart')) }}) items</a>
+                {{-- <a href="{{ route('cart.index') }}">({{ count((array) session('cart')) }}) items</a> --}}
+                <a href="{{ route('cart.index') }}">({{ $itemsCart }}) items</a>
             </div>
         </div><!--marketInfo-right-->
     </div><!--marketInfo-->

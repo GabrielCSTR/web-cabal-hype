@@ -4,7 +4,7 @@
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware'=> 'web', 'Auth', 'isActive'], function(){
+Route::group(['middleware'=> 'web', 'Auth'], function(){
 
     Route::middleware('checkIsActive')->group(function(){
 
