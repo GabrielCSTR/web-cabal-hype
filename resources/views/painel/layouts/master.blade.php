@@ -96,7 +96,7 @@
     <script src="{{ asset('panel/vendors/js/charts/jquery.sparkline.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('panel/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('panel/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('panel/data/jvector/visitor-data.js') }}" type="text/javascript"></script>
+    {{-- <script src="{{ asset('panel/data/jvector/visitor-data.js') }}" type="text/javascript"></script> --}}
     <script src="{{ asset('panel/vendors/js/forms/extended/formatter/formatter.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('panel/vendors/js/forms/icheck/icheck.min.js') }}" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->

@@ -52,7 +52,7 @@
                 <i class="icon icon-plus-dark"></i> Planos
             </div>
             <div class="depositBlocks flex-c-c">
-                @foreach ($plans as $plan)
+                {{-- @foreach ($plans as $plan)
                     <div class="depositBlock flex-c">
                         <span class="depositBlock-check"></span>
                         <span class="depositBlock-coin coin-1"></span>
@@ -63,16 +63,21 @@
                         <input type="hidden" class="depositBlock-plan"  value="{{ $plan->Name }}"/>
                         <span class="depositBlock-price">{{ $plan->Price }}</span>
                     </div>
-                @endforeach
+                @endforeach --}}
 
-                {{-- <div class="depositBlock flex-c">
+                <div class="depositBlock flex-c">
                     <span class="depositBlock-check"></span>
                     <span class="depositBlock-coin coin-1"></span>
                     <div class="depositBlock-info">
-                        <p class="depositBlock-cash">1.000</p>
+                        <p class="depositBlock-cash">2.000</p>
                         <span>Cash</span>
                     </div>
-                    <span class="depositBlock-price">$10</span>
+                    <span class="depositBlock-price">
+                        <span class="depositBlock-price"><script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+                            data-preference-id="573815282-559881c4-c677-4745-9d93-8c334e59178f" data-source="button">
+                            </script></span>
+
+                    </span>
                 </div>
                 <div class="depositBlock flex-c">
                     <span class="depositBlock-check"></span>
@@ -136,10 +141,10 @@
                         <span>Coins</span>
                     </div>
                     <span class="depositBlock-price">$500</span>
-                </div> --}}
+                </div>
             </div>
             <!--depositBlocks-->
-            <div class="payMethod">
+            {{-- <div class="payMethod">
                 <div class="market-content-title">
                     <span>Metodo Pagamento</span>
                 </div>
@@ -149,9 +154,9 @@
                         <img src="images/pix-payment.png" alt="" width="200">
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!--payMethod-->
-            <div class="confOrder">
+            {{-- <div class="confOrder">
                 <div class="market-content-title">
                     <span>Confirme Dados</span>
                 </div>
@@ -176,12 +181,12 @@
                         <button class="button-medium" onclick="cobrarPix()">Pagar agora</button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <!--market-content-->
     </div>
 
-    <div class="pixModal modal fade" data-backdrop="static" id="pixModal" tabindex="-1" aria-labelledby="pixModalLabel"
+    {{-- <div class="pixModal modal fade" data-backdrop="static" id="pixModal" tabindex="-1" aria-labelledby="pixModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-dark">
@@ -220,7 +225,7 @@
                                             </path>
                                         </svg>
                                         <!-- <i class="fa fa-copy"></i> -->
-                                        {{-- Copiar --}}
+                                        {{-- Copiar
                                     </a>
                                 </div>
                             </div>
@@ -241,8 +246,8 @@
                 </div>
             </div>
         </div>
-    </div>
-@section('scripts')
+    </div> --}}
+{{-- @section('scripts')
     @parent
 
     <script>
@@ -362,5 +367,5 @@
         }
 
     </script>
-@endsection
+@endsection --}}
 @endsection
