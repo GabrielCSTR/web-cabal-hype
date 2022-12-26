@@ -23,7 +23,7 @@
             <p class="info">This site has no associated with <br> or endorsaid by ESTSOF Inc</p>
         </div>
         <a class="f-logo" href="/">
-            <img src="./images/logo-footer.png" alt="logo" style="width: 160px;">
+            <img src="./images/logo-footer.png" alt="logo" style="width: 120px;">
         </a>
         <div>
             <ul class="social-networks flex-s-c">

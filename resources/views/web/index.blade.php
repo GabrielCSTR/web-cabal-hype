@@ -57,6 +57,8 @@
                     <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
                     <li class="{{ (request()->is('download')) ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
                     <li><a href="">RANKINGS</a></li>
+                    <li><a href="" onclick="new modal('#sign_up_modal');return false">CADASTRO</a></li>
+                    <li><a href="" onclick="new modal('#login_modal');return false">LOGIN</a></li>
                     {{-- <li><a href="">Top Guilds</a></li>
                     <li><a href="">sobre</a></li> --}}
                     {{-- <li><a href="">forum</a></li> --}}
@@ -98,8 +100,8 @@
 
                     @else
 
-                    <div class="topPanel-wrapper_right flex-c">
-                        <a href="" onclick="new modal('#sign_up_modal');return false" class="button mr-5">CADASTRO</a>
+                    <div class="topPanel-wrapper_right register">
+                        <a href="" onclick="new modal('#sign_up_modal');return false" class="button">CADASTRO</a>
                         {{-- <span>OU</span> --}}
                         <a href="" onclick="new modal('#login_modal');return false" class="button">LOGIN</a>
                         {{-- <button class="button" id="loginMain">
@@ -114,9 +116,9 @@
 	</div><!-- top-panel -->
     <div class="wrapper">
         <header class="header flex-s">
-			<div class="logo">
+			{{-- <div class="logo">
 				<a href="/"><img src="{{ asset('images/logo-1.png') }}" alt=""></a>
-            </div>
+            </div> --}}
             {{-- <div class="server-time">server time <span>00:00:00 00 00</span></div> --}}
             <div class="sparks sparks_2">
                 <div class="spark_1"></div>
@@ -128,19 +130,19 @@
             <div class="ray"></div>
         </header><!-- .header-->
         <main class="content">
-            {{-- <div class="fast-button flex-s">
+            <div class="fast-button flex-s">
                 <div class="btn-download"><a class="" target="_blank" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing"><span>Game client 3.45Gb</span></a></div>
                 <div class="reg-block">
-                    <a  target="_blank" href="https://www.mediafire.com/file/fx72bf39w15r7ic/PATCH_01.zip/file"><div class="b-icons iso"></div>
+                    {{-- <a  target="_blank" href="https://www.mediafire.com/file/fx72bf39w15r7ic/PATCH_01.zip/file"><div class="b-icons iso"></div>
                         <span>download GoogleDrive</span>
                         <span class="b-icons-text"> PATCH</span>
                     </a>
                     <a target="_blank" href="https://www.mediafire.com/file/fx72bf39w15r7ic/PATCH_01.zip/file"><div class="b-icons android"></div>
                         <span>download MediaFire</span>
                         <span class="b-icons-text"> PATCH</span>
-                    </a>
+                    </a> --}}
                 </div>
-                <div class="status-block">
+                {{-- <div class="status-block">
                     <div class="server-1 flex-c-c">
                         <div class="radial-stat">
                             <div class="circle-online">
@@ -163,14 +165,11 @@
                             </div><!-- circle-online -->
                         </div><!-- radial-stat -->
                     </div>
-                </div>
-            </div> --}}
+                </div>--}}
+            </div>
 
             {{-- NEWS --}}
             @include('web.components.news')
-
-            {{-- RANKINGS / EVENT --}}
-            @include('web.components.rankings')
 
             <h2 class="title-video-panel">Video</h2>
             <div class="video-pannel flex-s">
@@ -180,6 +179,9 @@
                 {{-- BANNERS --}}
                 @include('web.components.banners')
             </div>
+
+            {{-- RANKINGS / EVENT --}}
+            @include('web.components.rankings')
 
             {{-- MARKET --}}
             {{-- @include('web.components.market') --}}
