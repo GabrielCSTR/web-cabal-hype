@@ -85,6 +85,7 @@ class AuthController extends Controller
             'email' => $user->Email,
             'link'  => route('web.active', ['key' => $chave, 'account' => $user->UserNum])
         );
+
         // send email with the template
         Mail::send('welcome_email', $email_data, function ($message) use ($email_data) {
             $message->to($email_data['email'], $email_data['name'])

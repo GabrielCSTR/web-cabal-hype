@@ -1,17 +1,21 @@
 <?php
 
 use App\Http\Controllers\CharsController;
+use App\Http\Middleware\isActive;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=> 'web', 'Auth'], function(){
 
-    Route::prefix('chars')->group(function(){
+    Route::middleware('checkIsActive')->group(function(){
 
-        Route::get('/', [CharsController::class, 'index'])->name('chars.index');
+        Route::prefix('chars')->group(function(){
 
-        Route::post('/addPNT/{id}', [CharsController::class, 'addPoints'])->name('chars.addPNT');
+            Route::get('/', [CharsController::class, 'index'])->name('chars.index');
 
-        Route::post('/cleanPK/{id}', [CharsController::class, 'cleanPK'])->name('chars.cleanPK');
+            Route::post('/addPNT/{id}', [CharsController::class, 'addPoints'])->name('chars.addPNT');
 
+            Route::post('/cleanPK/{id}', [CharsController::class, 'cleanPK'])->name('chars.cleanPK');
+
+        });
     });
 });

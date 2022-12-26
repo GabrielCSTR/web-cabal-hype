@@ -5,10 +5,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=> 'web', 'Auth'], function(){
 
+
+    Route::middleware('checkIsActive')->group(function(){
+
     Route::prefix('profile')->group(function(){
 
         Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
         Route::post('/update', [ProfileController::class, 'updatePW'])->name('profile.updatePW');
+
+    });
 
     });
 });

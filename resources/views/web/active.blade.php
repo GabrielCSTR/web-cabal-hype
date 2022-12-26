@@ -82,9 +82,9 @@
 	</div><!-- top-panel -->
     <div class="wrapper">
         <header class="header flex-s">
-			<div class="logo">
+			{{-- <div class="logo">
 				<a href="/"><img src="{{ asset('images/logo-1.png') }}" alt=""></a>
-            </div>
+            </div> --}}
             {{-- <div class="server-time">server time <span>00:00:00 00 00</span></div> --}}
             <div class="sparks sparks_2">
                 <div class="spark_1"></div>

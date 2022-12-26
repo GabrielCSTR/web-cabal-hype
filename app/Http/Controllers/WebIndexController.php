@@ -104,7 +104,7 @@ class WebIndexController extends Controller
 
             if(!$user)
             {
-                return redirect()->route('web.home')->with('success', 'Pagina nÃ£o existe!');
+                return redirect()->route('web.home')->with('success', 'Pagina não existe!');
             }
             else
             {
@@ -129,18 +129,19 @@ class WebIndexController extends Controller
             // check user exist
             if($user)
             {
+                $user->AuthType = 1;
                 $user->is_active = 1;
                 $user->save();
-                return redirect()->route('web.home')->with('success', 'Pagina nÃ£o existe!');
+                return redirect()->route('web.home')->with('success', 'Pagina não existe!');
             }
             else
             {
-                return redirect()->route('web.home')->with('success', 'Pagina nÃ£o existe!');
+                return redirect()->route('web.home')->with('success', 'Pagina não existe!');
             }
 
         }
 
-        return redirect()->route('web.home')->with('success', 'Pagina nÃ£o existe!');
+        return redirect()->route('web.home')->with('success', 'Pagina não existe!');
     }
 
     public function callback(Request $request)

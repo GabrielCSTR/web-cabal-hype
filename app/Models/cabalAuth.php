@@ -31,4 +31,15 @@ class cabalAuth extends Authenticatable
     {
         return Auth::user()->is_admin;
     }
+
+    public function isActive()
+    {
+        return Auth::user()->is_active;
+    }
+
+    public function maskEmail()
+    {
+        $email = Auth::user()->Email;
+        return substr($email, 0, 3).'****'.substr($email, strpos($email, "@"));
+    }
 }

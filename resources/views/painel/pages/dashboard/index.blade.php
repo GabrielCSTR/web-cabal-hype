@@ -28,13 +28,23 @@
             </div>
           </div>
           <div class="card-content collapse show">
-            <div class="card-body">
-                <div class="bs-callout-success callout-border-left callout-round callout-bordered mt-1 p-2 py-1">
-                    <strong>Olá,{{ Auth::user()->ID }}</strong>
-                    <p>Seja bem vindo ao Cabal Hype. Nesse painel você vai encontrar tudo que você precisa, Caso tenha algum problema entre em contato pelo nosso DISCORD!
-                    </p>
+            @if (!Auth::user()->isActive())
+                <div class="card-body">
+                    <div class="bs-callout-danger callout-border-left callout-round callout-bordered mt-1 p-2 py-1">
+                        <strong>ATENÇÃO, {{ Auth::user()->ID }}</strong>
+                        <p>Sua conta se encontra desativada, Para ativar sua conta acesse o link que foi enviado para seu e-mail ({{ Auth::user()->maskEmail() }})!</p>
+                        <p>Caso não tenha localizado o E-Mail entre em contato com o supporte em nosso DISCORD!</p>
+                    </div>
                 </div>
-            </div>
+            @else
+                <div class="card-body">
+                    <div class="bs-callout-success callout-border-left callout-round callout-bordered mt-1 p-2 py-1">
+                        <strong>Olá, {{ Auth::user()->ID }}</strong>
+                        <p>Seja bem vindo ao Cabal Hype. Nesse painel você vai encontrar tudo que você precisa, Caso tenha algum problema entre em contato pelo nosso DISCORD!
+                        </p>
+                    </div>
+                </div>
+            @endif
           </div>
         </div>
       </div>
