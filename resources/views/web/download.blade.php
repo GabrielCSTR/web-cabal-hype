@@ -56,7 +56,7 @@
                 <ul class="menu flex-c-c">
                     <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
                     <li class="{{ (request()->is('download')) ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
-                    <li><a href="">RANKINGS</a></li>
+                    <li><a href="#">RANKINGS</a></li>
                     {{-- <li><a href="">Top Guilds</a></li>
                     <li><a href="">sobre</a></li> --}}
                     {{-- <li><a href="">forum</a></li> --}}
@@ -69,22 +69,53 @@
                     <a href="" class="twch"></a>
                     <a href="" class="yt"></a>
                 </div>
-                <div class="topPanel-wrapper_right flex-c">
-                <a href="" onclick="new modal('#sign_up_modal');return false" class="sign-in">CADASTRO</a>
-                {{-- <span>OU</span> --}}
-                {{-- <a href="" onclick="new modal('#');return false" class="button">LOGIN</a> --}}
-                {{-- <button class="button" id="loginMain">
-                    {{ __('LOGIN') }}
-                </button> --}}
-            </div>
+                @if (Auth::check())
+
+                <div class="log-in flex-s-c">
+                    <ul class="menulog-in flex-s-c" >
+                        <li class="log-in-menu-1">
+                            <a href="javascript:void(0);" class="main-item-log-in">{{ Auth::user()->ID }}</a>
+                            <ul class="hidden-block-log-in">
+                                <div class="icon-login-big flex-s-c">
+                                    <img src="images/icon-login.jpg" alt="">
+                                    <p class="icon-text">{{ Auth::user()->ID }}<br><span>{{ Auth::user()->Email }}</span></p>
+                                </div>
+                                <li><a href="{{ route('dashboard') }}">User Panel</a></li>
+                                <li><a href="#">Items Shop</a></li>
+                                {{-- <li><a href="#">Admin Area</a></li> --}}
+                                <a class="log-out" href="{{ route('web.logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                    <i class="ft-power"></i>
+                                    Log out
+                                </a>
+                                <form id="frm-logout" action="{{ route('web.logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </ul>
+                        </li>
+                    <ul>
+                    <div class="icon-log-in"><img src="images/icon-login.jpg" alt=""></div>
+                </div>
+
+                @else
+
+                <div class="topPanel-wrapper_right register">
+                    <a href="" onclick="new modal('#sign_up_modal');return false" class="button">CADASTRO</a>
+                    {{-- <span>OU</span> --}}
+                    <a href="" onclick="new modal('#login_modal');return false" class="button">LOGIN</a>
+                    {{-- <button class="button" id="loginMain">
+                        {{ __('LOGIN') }}
+                    </button> --}}
+                </div>
+
+            @endif
             </div>
         </div>
 	</div><!-- top-panel -->
     <div class="wrapper">
         <header class="header flex-s">
-			<div class="logo">
+			{{-- <div class="logo">
 				<a href="/"><img src="{{ asset('images/logo-1.png') }}" alt=""></a>
-            </div>
+            </div> --}}
             {{-- <div class="server-time">server time <span>00:00:00 00 00</span></div> --}}
             <div class="sparks sparks_2">
                 <div class="spark_1"></div>

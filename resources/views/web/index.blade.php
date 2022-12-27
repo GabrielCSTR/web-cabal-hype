@@ -57,9 +57,9 @@
                     <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
                     <li class="{{ (request()->is('download')) ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
                     <li><a href="">RANKINGS</a></li>
-                    <li><a href="" onclick="new modal('#sign_up_modal');return false">CADASTRO</a></li>
+                    {{--<li><a href="" onclick="new modal('#sign_up_modal');return false">CADASTRO</a></li>
                     <li><a href="" onclick="new modal('#login_modal');return false">LOGIN</a></li>
-                    {{-- <li><a href="">Top Guilds</a></li>
+                     <li><a href="">Top Guilds</a></li>
                     <li><a href="">sobre</a></li> --}}
                     {{-- <li><a href="">forum</a></li> --}}
                 </ul>
@@ -131,7 +131,8 @@
         </header><!-- .header-->
         <main class="content">
             <div class="fast-button flex-s">
-                <div class="btn-download"><a class="" target="_blank" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing"><span>Game client 3.45Gb</span></a></div>
+                {{-- <div class="btn-download"><a class="" target="_blank" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing"><span>Game client 3.45Gb</span></a></div> --}}
+                <div class="btn-download"><a href="{{ route('web.download') }}" ><span>Game client 3.45Gb</span></a></div>
                 <div class="reg-block">
                     {{-- <a  target="_blank" href="https://www.mediafire.com/file/fx72bf39w15r7ic/PATCH_01.zip/file"><div class="b-icons iso"></div>
                         <span>download GoogleDrive</span>
