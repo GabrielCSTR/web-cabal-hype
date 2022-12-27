@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Jobs\SendWelcomeEmail;
 use App\Models\cabalAuth;
 use App\Models\User;
 use App\Notifications\WelcomeEmailNotification;
@@ -67,7 +68,7 @@ class AuthController extends Controller
         // return redirect()->route('home')->with('success', 'Logado com sucesso!');
 	}
 
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
         $IP = $_SERVER['REMOTE_ADDR'];
         $chave = Str::random(10);
@@ -81,17 +82,19 @@ class AuthController extends Controller
         $user = cabalAuth::where('ID', $request->ID)->first();
         // email data
         $email_data = array(
-            'name'  => $user->ID,
-            'email' => $user->Email,
+            'name'  => $request->ID,
+            'email' => $request->email,
+            'subject' => 'CADASTRO - GAMES HYPE',
             'link'  => route('web.active', ['key' => $chave, 'account' => $user->UserNum])
         );
 
+        SendWelcomeEmail::dispatch($email_data);
         // send email with the template
-        Mail::send('welcome_email', $email_data, function ($message) use ($email_data) {
-            $message->to($email_data['email'], $email_data['name'])
-                ->subject('CADASTRO - GAMES HYPE')
-                ->from('suporte@gameshype.com.br', 'Suporte Games Hype');
-        });
+        // Mail::send('welcome_email', $email_data, function ($message) use ($email_data) {
+        //     $message->to($email_data['email'], $email_data['name'])
+        //         ->subject('CADASTRO - GAMES HYPE')
+        //         ->from('suporte@gameshype.com.br', 'Suporte Games Hype');
+        // });
         //$user->notify(new WelcomeEmailNotification());
         //dd($user);
 
