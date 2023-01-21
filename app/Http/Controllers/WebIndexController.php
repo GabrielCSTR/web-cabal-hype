@@ -98,7 +98,7 @@ class WebIndexController extends Controller
         {
 
             $user = cabalAuth::where('Chave', $key)
-                ->where('ID', $account)
+                ->where('UserNum', $account)
                 ->whereNull('is_active')
                 ->first();
 
@@ -123,7 +123,7 @@ class WebIndexController extends Controller
         if($account != "")
         {
             // get user infos
-            $user = cabalAuth::where('ID', $account)
+            $user = cabalAuth::where('UserNum', $account)
                             ->whereNull('is_active')
                             ->first();
             // check user exist

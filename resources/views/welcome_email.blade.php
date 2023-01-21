@@ -7,4 +7,4 @@ Para usar nosso painel é preciso ativar sua conta.<br>
 <b>LINK: <a href="{{ $link }}" target="_blank" >COFIRMAR CADASTRO</a></b><br><br>
 
 Atenciosamente,<br>
-<b>GamesHype</b>
+<b>GamesMillennium</b>

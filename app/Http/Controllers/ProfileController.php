@@ -32,7 +32,7 @@ class ProfileController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => "Senha modificada com sucesso - Cabal Hype!",
+            'message' => "Senha modificada com sucesso - Cabal Millennium!",
         ]);
     }
 }

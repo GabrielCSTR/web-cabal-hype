@@ -8,7 +8,7 @@
             <a class="navbar-brand" href="{{ route('dashboard') }}">
               {{-- <img class="brand-logo" alt="cabal hype logo" src="{{ asset('images/logo-icon.png') }}"> --}}
               <img class="brand-logo" alt="logo" src="{{ asset('images/logo-icon.png') }}">
-              <h3 class="brand-text teal">CABAL HYPE
+              <h3 class="brand-text teal">CABAL Millennium
                 <p class="text-right text-warning font-small-3" style="margin-right: 50px">Painel</p>
               </h4>
             </a>

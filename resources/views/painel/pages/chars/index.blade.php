@@ -137,11 +137,11 @@
                 <div class="carousel-inner">
                   <div class="carousel-item">
                     <p>Mantenha suas informações sempre atualizadas
-                      <span class="yellow">#CABAL</span> HYPE!</p>
+                      <span class="yellow">#CABAL</span> Millennium!</p>
                   </div>
                   <div class="carousel-item active">
                     <p>Sempre que for editar seu personagem faza com seu char OFFLINE
-                      <span class="yellow">#CABAL</span> HYPE.</p>
+                      <span class="yellow">#CABAL</span> Millennium.</p>
                   </div>
                 </div>
               </div>
@@ -160,11 +160,11 @@
                 <div class="carousel-inner">
                     <div class="carousel-item">
                     <p>Mantenha suas informações sempre atualizadas
-                        <span class="yellow">#CABAL</span> HYPE!</p>
+                        <span class="yellow">#CABAL</span> Millennium!</p>
                     </div>
                     <div class="carousel-item active">
                     <p>Sempre que for editar seu personagem faza com seu char OFFLINE
-                        <span class="yellow">#CABAL</span> HYPE.</p>
+                        <span class="yellow">#CABAL</span> Millennium.</p>
                     </div>
                 </div>
               </div>
@@ -183,11 +183,11 @@
                 <div class="carousel-inner">
                 <div class="carousel-item">
                     <p>Mantenha suas informações sempre atualizadas
-                        <span class="yellow">#CABAL</span> HYPE!</p>
+                        <span class="yellow">#CABAL</span> Millennium!</p>
                     </div>
                     <div class="carousel-item active">
                     <p>Sempre que for editar seu personagem faza com seu char OFFLINE
-                        <span class="yellow">#CABAL</span> HYPE.</p>
+                        <span class="yellow">#CABAL</span> Millennium.</p>
                     </div>
                 </div>
               </div>

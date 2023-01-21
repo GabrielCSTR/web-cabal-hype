@@ -34,7 +34,7 @@ class WelcomeEmail extends Mailable
     {
         return $this->view('emails.created.welcome')
                     ->subject($this->details['subject'])
-                    ->from('suporte@gameshype.com.br', 'Suporte Games Hype')
+                    ->from('suporte@games-millennium.com', 'Suporte Games Millennium')
                     ->with('details', $this->details);
     }
 }

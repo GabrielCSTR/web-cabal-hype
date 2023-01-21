@@ -54,7 +54,7 @@ class AuthController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => "Logado com sucesso, Seja bem vindo ao painel user - Cabal Hype!",
+                'message' => "Logado com sucesso, Seja bem vindo ao painel user - Cabal Millennium!",
             ]);
         }
         else
@@ -84,8 +84,8 @@ class AuthController extends Controller
         $email_data = array(
             'name'  => $request->ID,
             'email' => $request->email,
-            'subject' => 'CADASTRO - GAMES HYPE',
-            'link'  => route('web.active', ['key' => $chave, 'account' => $user->UserNum])
+            'subject' => 'CADASTRO - GAMES Millennium',
+            'link'  => route('web.active.index', ['key' => $chave, 'account' => $user->UserNum])
         );
 
         SendWelcomeEmail::dispatch($email_data);

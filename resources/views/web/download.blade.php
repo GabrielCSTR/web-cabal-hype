@@ -2,22 +2,22 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Basic -->
-	<title>{{ config('app.name', 'Cabal Hype') }}</title>
+	<title>{{ config('app.name', 'Cabal Millennium') }}</title>
     <meta charset="UTF-8">
-    <title>Hype Games  - Servidor Privado de Cabal Online</title>
-    <meta name="title" content="Hype Games - Servidor Privado de Cabal Online">
+    <title>Millennium Games  - Servidor Privado de Cabal Online</title>
+    <meta name="title" content="Millennium Games - Servidor Privado de Cabal Online">
     <meta name="description" content="⚔️Prepare-se para uma grande batalha!">
-    <meta name="keywords" content="Cabal online, Hype Games, Cabal Hype, Cabal Hype Games, Cabal Privado, Private Cabal, Cabal Private, Servidor de Cabal, Servidor Privado de Cabal, Cabal, Cabal Download, Cabal Cadastro, Cabal Brasil, Cabal brasileiro">
+    <meta name="keywords" content="Cabal online, Millennium Games, Cabal Millennium, Cabal Millennium Games, Cabal Privado, Private Cabal, Cabal Private, Servidor de Cabal, Servidor Privado de Cabal, Cabal, Cabal Download, Cabal Cadastro, Cabal Brasil, Cabal brasileiro">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hypegames.com.br">
-    <meta property="og:title" content="Hype Games - Servidor Privado de Cabal Online">
+    <meta property="og:url" content="#">
+    <meta property="og:title" content="Millennium Games - Servidor Privado de Cabal Online">
     <meta property="og:description" content="⚔️Prepare-se para uma grande batalha!">
     <meta property="og:image" content="#">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="#">
-    <meta property="twitter:title" content="Hype Games - Servidor Privado de Cabal Online">
+    <meta property="twitter:title" content="Millennium Games - Servidor Privado de Cabal Online">
     <meta property="twitter:description" content="⚔️Prepare-se para uma grande batalha!">
     <meta property="twitter:image" content="#">
     <link rel="icon" href="#" type="image/png">

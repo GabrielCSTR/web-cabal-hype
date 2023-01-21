@@ -47,7 +47,7 @@ class PremiumController extends Controller
         else
         {
 
-            if($premiumAccount->ServiceKind === 0)
+            if($premiumAccount->ServiceKind == 0)
             {
                 // cash total
                 $valorCash = $cash->Cash - $vipPremium_valor;
@@ -108,7 +108,7 @@ class PremiumController extends Controller
 
                 return response()->json([
                     'success' => true,
-                    'message' => "Obrigado por efetuar a compra do VIP no Cabal Hype, Seu vip já foi ativado",
+                    'message' => "Obrigado por efetuar a compra do VIP no Cabal Millennium, Seu vip já foi ativado",
                 ]);
             }
             else{

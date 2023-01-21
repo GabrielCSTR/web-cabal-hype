@@ -1,5 +1,5 @@
 
-# Cabal Hype!<br><br>
+# Cabal Millennium!<br><br>
 
 Olá {{ $details['name'] }},<br><br>
 Seja muito bem vindo a nosso servidor 🙂<br><br>
@@ -11,4 +11,4 @@ Caso tenha problemas entre em contato com nosso discord.<br>
 <b>LINK: <a href="{{ $details['link'] }}" target="_blank" >COFIRMAR CADASTRO</a></b><br><br>
 
 Atenciosamente,<br>
-<b>GamesHype</b>
+<b>GamesMillennium</b>

@@ -19,7 +19,7 @@
     </div>
     <div class="bottom-footer flex-s-c">
         <div class="info-copyright">
-            <p>Copyright 2021 &copy; <a href="">gameshype.com.br</a></p>
+            <p>Copyright 2023 &copy; <a href="">games-millennium.com</a></p>
             <p class="info">This site has no associated with <br> or endorsaid by ESTSOF Inc</p>
         </div>
         <a class="f-logo" href="/">

@@ -18,7 +18,7 @@
     <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title">CABAL HYPE</h4>
+            <h4 class="card-title">CABAL Millennium</h4>
             <a class="heading-elements-toggle"><i class="la la-ellipsis font-medium-3"></i></a>
             <div class="heading-elements">
               <ul class="list-inline mb-0">
@@ -40,7 +40,7 @@
                 <div class="card-body">
                     <div class="bs-callout-success callout-border-left callout-round callout-bordered mt-1 p-2 py-1">
                         <strong>Olá, {{ Auth::user()->ID }}</strong>
-                        <p>Seja bem vindo ao Cabal Hype. Nesse painel você vai encontrar tudo que você precisa, Caso tenha algum problema entre em contato pelo nosso DISCORD!
+                        <p>Seja bem vindo ao Cabal Millennium. Nesse painel você vai encontrar tudo que você precisa, Caso tenha algum problema entre em contato pelo nosso DISCORD!
                         </p>
                     </div>
                 </div>
