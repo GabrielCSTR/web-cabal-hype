@@ -15,9 +15,9 @@
             </li>
         @endif
         @if (Auth::user()->isActive())
-        <li class=" nav-item {{ (request()->is('donate*')) ? 'active' : '' }}"><a href="{{ route('donate.index') }}"><i class="la la-money"></i><span class="menu-title" data-i18n="">Donate</span></a></li>
+        <li class=" nav-item {{ (request()->is('donate*')) ? 'active' : '' }}"><a href="{{ route('donate.index') }}"><i class="la la-dollar"></i><span class="menu-title" data-i18n="">Donate</span></a></li>
         <li class=" nav-item"><a href="{{ route('shop.index','5') }}"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="">Shop</span></a></li>
-        <li class=" nav-item {{ (request()->is('premium*')) ? 'active' : '' }}"><a href="{{ route('premium.index') }}"><i class="ft-user"></i><span class="menu-title" data-i18n="">Serviço Premium</span></a>
+        <li class=" nav-item {{ (request()->is('premium*')) ? 'active' : '' }}"><a href="{{ route('premium.index') }}"><i class="la la-diamond"></i><span class="menu-title" data-i18n="">Serviço Premium</span></a>
         <li class=" nav-item {{ (request()->is('chars*')) ? 'active' : '' }}"><a href="{{ route('chars.index') }}"><i class="ft-users"></i><span class="menu-title" data-i18n="">Personagens</span></a></li>
         <li class=" nav-item {{ (request()->is('profile*')) ? 'active' : '' }}"><a href="{{ route('profile.index') }}"><i class="ft-user"></i><span class="menu-title" data-i18n="">Perfil</span></a>
         @endif

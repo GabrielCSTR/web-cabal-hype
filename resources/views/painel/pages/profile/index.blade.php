@@ -33,7 +33,7 @@
             <div class="col-12">
                 <div class="animated bounceInUp card profile-with-cover">
                     <div class="card-img-top img-fluid bg-cover height-300"
-                        style="background: url('images/news-image.jpg') 50%; background-color:black"></div>
+                        style="background: url('images/news-image.jpg') 0 300px; background-color:black"></div>
                     <div class="media profil-cover-details w-100">
                         <div class="media-left pl-2 pt-2">
                             <a href="#" class="profile-image">
@@ -78,13 +78,13 @@
                     </div>
                     <div class="card-content collapse show">
                       <div class="card-body">
-                        <div class="card-text">
+                        {{-- <div class="card-text">
                           <p>Olá, {{ Auth::user()->ID }}. Aqui fica algumas
                             informações básica do seu perfil.</p>
-                        </div>
+                        </div> --}}
 
                           <div class="form-body">
-                            <h4 class="form-section"><i class="ft ft-eye"></i> Sobre User - {{ mb_strtoupper(Auth::user()->ID) }}</h4>
+                            {{-- <h4 class="form-section"><i class="ft ft-eye"></i> Sobre User - {{ mb_strtoupper(Auth::user()->ID) }}</h4> --}}
                             <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
@@ -119,7 +119,7 @@
                                 <h5>Trocar senha:</h5>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-warning mr-1" data-toggle="modal" data-target="#changePW">
-                                    <i class="ft-x"></i> Trocar senha
+                                    <i class="ft-x"></i> Alterar
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal animated pulse text-left" id="changePW" tabindex="-1" role="dialog" aria-labelledby="myModalLabel12" style="display: none;" aria-hidden="true">

@@ -77,7 +77,7 @@
                             <a href="javascript:void(0);" class="main-item-log-in">{{ Auth::user()->ID }}</a>
                             <ul class="hidden-block-log-in">
                                 <div class="icon-login-big flex-s-c">
-                                    <img src="images/icon-login.jpg" alt="">
+                                    <img src="images/icon-login.png" alt="">
                                     <p class="icon-text">{{ Auth::user()->ID }}<br><span>{{ Auth::user()->Email }}</span></p>
                                 </div>
                                 <li><a href="{{ route('dashboard') }}">User Panel</a></li>
@@ -93,7 +93,7 @@
                             </ul>
                         </li>
                     <ul>
-                    <div class="icon-log-in"><img src="images/icon-login.jpg" alt=""></div>
+                    <div class="icon-log-in"><img src="images/icon-login.png" alt=""></div>
                 </div>
 
                 @else

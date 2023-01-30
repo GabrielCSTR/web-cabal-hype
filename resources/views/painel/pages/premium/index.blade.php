@@ -15,7 +15,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-6">
+    {{-- <div class="col-6">
         <div class="card">
             <div class="card-content">
               <div class="card-body">
@@ -24,11 +24,11 @@
               <img class="card-img img-fluid mb-1" src="{{ asset('images/passe.png') }}" alt="Card image vip">
               <div class="card-body">
                 <p class="card-text">Passe de batalha, EM BREVE!!!</p>
-                {{-- <a href="#" class="card-link pink">ITENS</a> --}}
+                {{-- <a href="#" class="card-link pink">ITENS</a>
               </div>
             </div>
           </div>
-      </div>
+      </div> --}}
 
       <div class="col-6">
         <div class="card">
@@ -36,7 +36,7 @@
               <div class="card-body">
                 <h4 class="card-title">VIP - Premium</h4>
               </div>
-              <img class="card-img img-fluid mb-1" src="{{ asset('images/vip.png') }}" alt="Card image vip">
+              <img class="card-img img-fluid mb-1" src="{{ asset('images/vip.jpg') }}" alt="Card image vip">
               <div class="card-body">
                 <p class="card-text">Sistema de VIP, compre agora e adiquira os status do vip</p>
                 <a href="#" class="card-link pink">CASH: 3.000</a>
@@ -48,7 +48,7 @@
                       <div class="card-content">
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
+                                {{-- <li class="list-group-item">
                                   <span class="badge badge-default badge-pill bg-primary float-right">250%</span>
                                   EXP
                                 </li>
@@ -75,7 +75,7 @@
                                 <li class="list-group-item">
                                   <span class="badge badge-default badge-pill bg-danger float-right">3x</span>
                                    DROP ITENS
-                                </li>
+                                </li> --}}
                                 <li class="list-group-item list-group-item-action flex-column align-items-start active">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="text-bold-600 white">Atributos</h5>

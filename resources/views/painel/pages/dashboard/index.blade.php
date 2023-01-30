@@ -38,9 +38,9 @@
                 </div>
             @else
                 <div class="card-body">
-                    <div class="bs-callout-success callout-border-left callout-round callout-bordered mt-1 p-2 py-1">
+                    <div class="bs-callout-warning callout-border-left callout-round callout-bordered mt-1 p-2 py-1">
                         <strong>Olá, {{ Auth::user()->ID }}</strong>
-                        <p>Seja bem vindo ao Cabal Millennium. Nesse painel você vai encontrar tudo que você precisa, Caso tenha algum problema entre em contato pelo nosso DISCORD!
+                        <p>Seja bem vindo(a) ao Cabal Millennium. Qualquer duvida ou problema entre em contato conosco atraves de nosso DISCORD ou FACEBOOK.
                         </p>
                     </div>
                 </div>

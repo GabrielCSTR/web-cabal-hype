@@ -40,7 +40,7 @@
                                     checked required>
                                 <label for="agree"></label> Remember me.
                             </p>
-                            <a href="" class="lost-pass">Lost password?</a>
+                            <a href="" class="lost-pass">Esqueceu a senha?</a>
                             <div class="formGroup">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary" id="loginMain">

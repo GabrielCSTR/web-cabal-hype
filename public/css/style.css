@@ -2553,3 +2553,6 @@ footer .f-logo:hover {
 .banner-view {
     margin-top: 55px;
 }
+.navbar-dark {
+    background: #2c303b !important;
+}

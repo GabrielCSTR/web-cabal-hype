@@ -2342,23 +2342,23 @@ a.lightzoom {
 }
 
 .coin-1 {
-    background: url(../images/coin-1.png);
+    background: url(../images/coin-new.png);
 }
 
 .coin-2 {
-    background: url(../images/coin-2.png);
+    background: url(../images/coin-new.png);
 }
 
 .coin-3 {
-    background: url(../images/coin-3.png);
+    background: url(../images/coin-new.png);
 }
 
 .coin-4 {
-    background: url(../images/coin-4.png);
+    background: url(../images/coin-new.png);
 }
 
 .coin-5 {
-    background: url(../images/coin-5.png);
+    background: url(../images/coin-new.png);
 }
 
 .depositBlock-price {
@@ -2646,7 +2646,7 @@ a.lightzoom {
 }
 
 .item-img {
-    background: url(../images/item-img-bg.png);
+    background: url(../images/item-img-bg3.png);
     width: 154px;
     height: 154px;
     margin: 0 auto;
