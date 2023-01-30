@@ -96,6 +96,14 @@
         flex-direction: column;
         align-items: center;
     }
+    .banner-view {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+    .fast-links {
+        margin-bottom: 40px;
+    }
 
     .news-panel .slider {
         margin-bottom: 20px;

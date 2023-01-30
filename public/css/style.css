@@ -244,7 +244,7 @@ a {
 }
 
 .top-panel-block {
-    max-width: 1480px;
+    /* max-width: 1480px; */
     margin: 0 auto;
     top: 0px;
     z-index: 10;
@@ -558,9 +558,9 @@ a.sign-in:hover {
 
 .status-block > div {
     position: relative;
-    width: 196px;
+    /* width: 196px; */
     margin-left: 1px;
-    background: url(../images/bg-server.jpg) 0 0 no-repeat;
+    /* background: url(../images/bg-server.jpg) 0 0 no-repeat; */
 }
 
 .status-block > div::before {
@@ -630,7 +630,7 @@ a.sign-in:hover {
 
 .news-panel {
     height: 380px;
-    margin-top: 55px;
+    /* margin-top: 55px; */
 }
 
 .news-panel > div {
@@ -755,6 +755,8 @@ a.sign-in:hover {
     display: flex;
     flex-direction: column;
     background: url("../images/events-block.jpg") 0 0 no-repeat;
+    background-size: cover;
+    height: 476px;
     padding: 40px 0;
 }
 
@@ -1112,14 +1114,14 @@ a.sign-in:hover {
 }
 
 .video-block {
-    width: 790px;
+    width: 605px;
     height: 476px;
     padding: 40px;
     background: #030508;
 }
 
 .video-player {
-    width: 710px;
+    /* width: 710px; */
     height: 250px;
     flex-direction: column;
     justify-content: space-around;
@@ -1185,8 +1187,8 @@ a.sign-in:hover {
 }
 
 .fast-links {
-    width: 378px;
-    height: 476px;
+    width: 445px;
+    height: 361px;
     display: flex;
     flex-direction: column;
     font-family: "Roboto";
@@ -1491,6 +1493,9 @@ a.sign-in:hover {
 .info-copyright {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .info-copyright a {
@@ -1532,6 +1537,10 @@ a.sign-in:hover {
     background: #000 url("../images/social-networks.png") -153px 9px no-repeat;
 }
 
+.social-networks .discord a {
+    background: #000 url("../images/social-networks2.png") -212px 9px no-repeat;
+}
+
 .social-networks a:hover {
     border: 1px solid #ff9c00;
     box-shadow: inset 0 0 10px 0 #ff9c00;
@@ -1540,9 +1549,9 @@ a.sign-in:hover {
 .designed {
     display: block;
     width: 194px;
-    height: 49px;
+    height: 30px;
     background: url("../images/designed-icon.png");
-    margin-top: 60px;
+    /* margin-top: 60px; */
     transition: 0.5s;
 }
 
@@ -2540,3 +2549,7 @@ footer .f-logo:hover {
     }
 }
 /*end animation*/
+
+.banner-view {
+    margin-top: 55px;
+}

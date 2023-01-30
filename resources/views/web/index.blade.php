@@ -56,7 +56,8 @@
                 <ul class="menu flex-c-c">
                     <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
                     <li class="{{ (request()->is('download')) ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
-                    <li><a href="">RANKINGS</a></li>
+                    <li><a href="#">RANKINGS</a></li>
+                    <li><a href="#">Discord</a></li>
                     {{--<li><a href="" onclick="new modal('#sign_up_modal');return false">CADASTRO</a></li>
                     <li><a href="" onclick="new modal('#login_modal');return false">LOGIN</a></li>
                      <li><a href="">Top Guilds</a></li>
@@ -132,7 +133,7 @@
         <main class="content">
             <div class="fast-button flex-s">
                 {{-- <div class="btn-download"><a class="" target="_blank" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing"><span>Game client 3.45Gb</span></a></div> --}}
-                <div class="btn-download"><a href="{{ route('web.download') }}" ><span>Game client 3.45Gb</span></a></div>
+
                 <div class="reg-block">
                     {{-- <a  target="_blank" href="https://www.mediafire.com/file/fx72bf39w15r7ic/PATCH_01.zip/file"><div class="b-icons iso"></div>
                         <span>download GoogleDrive</span>
@@ -143,8 +144,9 @@
                         <span class="b-icons-text"> PATCH</span>
                     </a> --}}
                 </div>
-                {{-- <div class="status-block">
-                    <div class="server-1 flex-c-c">
+                <div class="status-block">
+                    <div class="btn-download"><a href="{{ route('web.download') }}" ><span>Game client 3.45Gb</span></a></div>
+                    {{-- <div class="server-1 flex-c-c">
                         <div class="radial-stat">
                             <div class="circle-online">
                                 <div class="serverInfo">
@@ -154,8 +156,8 @@
                                 <div class="circlestat" data-dimension="120" data-width="3.5" data-fontsize="12" data-percent="1" data-fgcolor="#bbcb08" data-bgcolor="rgba(192, 209, 7, 0.2)"></div>
                             </div><!-- circle-online -->
                         </div><!-- radial-stat -->
-                    </div>
-                    <div class="server-2 flex-c-c">
+                    </div> --}}
+                    {{-- <div class="server-2 flex-c-c">
                         <div class="radial-stat">
                             <div class="circle-online">
                                 <div class="serverInfo">
@@ -165,22 +167,27 @@
                                 <div class="circlestat" data-dimension="120" data-width="3.5" data-fontsize="12" data-percent="1" data-fgcolor="#e22024" data-bgcolor="rgba(226, 32, 36, 0.2)"></div>
                             </div><!-- circle-online -->
                         </div><!-- radial-stat -->
-                    </div>
-                </div>--}}
+                    </div> --}}
+                </div>
             </div>
 
-            {{-- NEWS --}}
-            @include('web.components.news')
+
+            {{-- @include('web.components.news') --}}
 
             <h2 class="title-video-panel">Video</h2>
             <div class="video-pannel flex-s">
                 {{-- VIDEOS/IMAGES --}}
                 @include('web.components.videos')
 
+                {{-- NEWS --}}
+                @include('web.components.news')
+
+            </div>
+
+            <div class="banner-view flex-s">
                 {{-- BANNERS --}}
                 @include('web.components.banners')
             </div>
-
             {{-- RANKINGS / EVENT --}}
             @include('web.components.rankings')
 
