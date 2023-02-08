@@ -13,6 +13,7 @@
             {{-- <li><a href="">Cadastro</a></li> --}}
             <li><a href="">Download</a></li>
             <li><a href="">Ranking</a></li>
+            <li><a href="https://discord.com/invite/RZycJnyw5q">Discord</a></li>
             {{-- <li><a href="">Forum</a></li> --}}
             {{-- <li><a href="">Contato</a></li> --}}
         </ul>
@@ -27,10 +28,10 @@
         </div>
         <div>
             <ul class="social-networks flex-s-c">
-                <li class="facebook"><a href="#"></a></li>
+                <li class="facebook"><a href="https://www.facebook.com/gamesmillennium/"></a></li>
                 {{-- <li class="twitch"><a href="#"></a></li> --}}
-                <li class="youtube"><a href="#"></a></li>
-                <li class="discord"><a href="#"></a></li>
+                <li class="youtube"><a href="https://www.youtube.com/@gamesmillennium/"></a></li>
+                <li class="discord"><a href="https://discord.com/invite/RZycJnyw5q"></a></li>
             </ul>
             <a href="https://strdeveloped.com.br/" class="designed"></a>
         </div>

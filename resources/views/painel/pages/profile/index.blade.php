@@ -34,7 +34,7 @@
                 <div class="animated bounceInUp card profile-with-cover">
                     <div class="card-img-top img-fluid bg-cover height-300"
                         style="background: url('images/news-image.jpg') 0 300px; background-color:black"></div>
-                    <div class="media profil-cover-details w-100">
+                    {{-- <div class="media profil-cover-details w-100">
                         <div class="media-left pl-2 pt-2">
                             <a href="#" class="profile-image">
                                 <img src="{{ asset('images/logo-1.png') }}" class="rounded-circle img-border height-100"
@@ -48,8 +48,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <nav class="navbar navbar-light navbar-profile align-self-end">
+                    </div> --}}
+                    {{-- <nav class="navbar navbar-light navbar-profile align-self-end">
                         <button class="navbar-toggler d-sm-none" type="button" data-toggle="collapse" aria-expanded="false"
                             aria-label="Toggle navigation"></button>
                         <nav class="navbar navbar-expand-lg">
@@ -61,7 +61,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </nav>
+                        </nav> --}}
                     </nav>
                 </div>
 

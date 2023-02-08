@@ -103,10 +103,28 @@ class ShopController extends Controller
             //     unset($cart[$request->id]);
             //     session()->put('cart', $cart);
             // }
-            ShopCart::where('account', Auth::user()->UserNum)
-                    ->where('id', $request->id)->delete();
+            $item =  ShopCart::where('account', Auth::user()->UserNum)
+                    ->where('ProductID', $request->id)->first();
+            if($item) {
+                $item->delete();
+                return response()->json([
+                    'success' => true,
+                    'message' => "Item(s) removido com sucesso - Cabal Millennium!",
+                ]);
+            }
+            else {
+                return response()->json([
+                    'error' => true,
+                    'message' => "Produto informado para remover é invalido tente novamente!",
+                ]);
+            }
 
-            session()->flash('success', 'Produto removido com sucesso');
+        }
+        else {
+            return response()->json([
+                'error' => true,
+                'message' => "Produto informado para remover é invalido tente novamente!",
+            ]);
         }
     }
 
@@ -208,7 +226,7 @@ class ShopController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => "Item(s) comprado com sucesso - Cabal Hype!",
+                'message' => "Item(s) comprado com sucesso - Cabal Millennium!",
             ]);
         }
     }

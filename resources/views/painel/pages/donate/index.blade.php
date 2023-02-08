@@ -69,13 +69,12 @@
                     <span class="depositBlock-check"></span>
                     <span class="depositBlock-coin coin-1"></span>
                     <div class="depositBlock-info">
-                        <p class="depositBlock-cash">2.000</p>
+                        <p class="depositBlock-cash">1.000</p>
                         <span>Cash</span>
                     </div>
                     <span class="depositBlock-price">
-                        <span class="depositBlock-price"><script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
-                            data-preference-id="573815282-559881c4-c677-4745-9d93-8c334e59178f" data-source="button">
-                            </script></span>
+                      <!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7Z6kmn1es/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" height="30" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO -->
+                        <span class="depositBlock-price"></span>
 
                     </span>
                 </div>
@@ -86,9 +85,11 @@
                         <p class="depositBlock-cash">2.000</p>
                         <span>Cash</span>
                     </div>
-                    <span class="depositBlock-price">$20</span>
+                      <span class="depositBlock-price">
+                        <!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7Z6kn7JhP/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" height="30" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO -->
+                      </span>
                 </div>
-                <div class="depositBlock flex-c">
+                {{-- <div class="depositBlock flex-c">
                     <span class="depositBlock-check"></span>
                     <span class="depositBlock-coin coin-2"></span>
                     <div class="depositBlock-info">
@@ -96,7 +97,7 @@
                         <span>Cash</span>
                     </div>
                     <span class="depositBlock-price">$30</span>
-                </div>
+                </div> --}}
                 <div class="depositBlock flex-c">
                     <span class="depositBlock-check"></span>
                     <span class="depositBlock-coin coin-3"></span>
@@ -104,7 +105,9 @@
                         <p class="depositBlock-cash">5.000</p>
                         <span>Cash</span>
                     </div>
-                    <span class="depositBlock-price">$50</span>
+                    <span class="depositBlock-price">
+                        <!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7Z6knv1r7/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" height="30" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO -->
+                    </span>
                 </div>
                 <div class="depositBlock flex-c">
                     <span class="depositBlock-check"></span>
@@ -113,9 +116,11 @@
                         <p class="depositBlock-cash">10.000</p>
                         <span>Cash</span>
                     </div>
-                    <span class="depositBlock-price">$100</span>
+                    <span class="depositBlock-price">
+                        <!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7Z6knVuVs/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" height="30" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO -->
+                    </span>
                 </div>
-                <div class="depositBlock flex-c">
+                {{-- <div class="depositBlock flex-c">
                     <span class="depositBlock-check"></span>
                     <span class="depositBlock-coin coin-5"></span>
                     <div class="depositBlock-info">
@@ -123,7 +128,7 @@
                         <span>Coins</span>
                     </div>
                     <span class="depositBlock-price">$150</span>
-                </div>
+                </div> --}}
                 <div class="depositBlock flex-c">
                     <span class="depositBlock-check"></span>
                     <span class="depositBlock-coin coin-5"></span>
@@ -131,7 +136,9 @@
                         <p class="depositBlock-cash">20.000</p>
                         <span>Coins</span>
                     </div>
-                    <span class="depositBlock-price">$200</span>
+                    <span class="depositBlock-price">
+                        <!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7Z6koSSg4/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" height="30" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO -->
+                    </span>
                 </div>
                 <div class="depositBlock flex-c">
                     <span class="depositBlock-check"></span>
@@ -140,7 +147,9 @@
                         <p class="depositBlock-cash">50.000</p>
                         <span>Coins</span>
                     </div>
-                    <span class="depositBlock-price">$500</span>
+                    <span class="depositBlock-price">
+                        <!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7Z6kruMNK/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar.gif" height="30" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a><!-- FIM DO BOTAO PAGSEGURO -->
+                    </span>
                 </div>
             </div>
             <!--depositBlocks-->

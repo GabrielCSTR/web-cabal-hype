@@ -47,7 +47,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card profile-card-with-cover">
                 <div class="card-content">
-                    <div class="card-img-top img-fluid bg-cover height-200" style="background: url('images/logo-footer.png') 0 80%;"></div>
+                    <div class="card-img-top img-fluid bg-cover height-200"></div>
                     <div class="card-profile-image">
                     <img src="images/avatar/avatar-{{ getClass($char->Style) }}.png" class="rounded-circle img-border box-shadow-1" alt="Card image">
                     </div>
@@ -125,7 +125,7 @@
         </div>
         @endif
     </div>
-    <div class="row">
+    {{-- <div class="row">
       <div class="col-xl-4 col-md-12">
         <div class="card bg-twitter white">
           <div class="card-content p-2">
@@ -195,7 +195,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
   </section>
 @endsection
 

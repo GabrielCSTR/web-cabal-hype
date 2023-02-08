@@ -54,11 +54,11 @@
             </div>
             <div class="menuContent">
                 <ul class="menu flex-c-c">
-                    <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
-                    <li class="{{ (request()->is('download')) ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
+                    <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
+                    <li class="{{ request()->is('download') ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
                     <li><a href="#">RANKINGS</a></li>
-                    {{-- <li><a href="">Top Guilds</a></li>
-                    <li><a href="">sobre</a></li> --}}
+                    <li><a href="https://discord.com/invite/RZycJnyw5q">Discord</a></li>
+                    {{-- <li><a href="">sobre</a></li> --}}
                     {{-- <li><a href="">forum</a></li> --}}
                 </ul>
             </div>
@@ -221,16 +221,6 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="widget-block-span"></div>
-                        <div class="widget-block">
-                            <div class="info-widget-block top-event flex-s">
-                                <h2 class="title-widget-block">Event</h2>
-                                <input type="button" class="add">
-                            </div>
-                            <ul class="event-timers">
-
-                            </ul>
-                        </div>
                 </div>
                 <div class="news-block">
                     <h2>Download</h2>
@@ -240,11 +230,11 @@
 
                                 <div class="google-drive">
                                     <p>Download Mirror 1 [Google Drive]: <a href="#">Download - 3.45 GB</a></p>
-                                    <a target="_blank" href="https://drive.google.com/file/d/1U2j5w0tL_obg8h3rJYHkZFSGBTG920XL/view?usp=sharing" class="btn-download-file">Download Client</a>
+                                    <a target="_blank" href="#" class="btn-download-file">Download Client</a>
                                 </div>
                                 <div class="mega">
                                     <p>Download Mirror 2 [MediaFire]: <a href="#">Download - 3.45 GB</a></p>
-                                    <a target="_blank" href="https://www.mediafire.com/file/uncbleji6g3lfse/Cabal_Hype.7z/file" class="btn-download-file">Download Client</a>
+                                    <a target="_blank" href="#" class="btn-download-file">Download Client</a>
                                 </div>
                                 <div class="dropbox">
                                     <p>Download Mirror 3 [PATCH]: Download: <a href="#">Download - 1.45 GB</a></p>
@@ -284,6 +274,8 @@
 
 
     @include('web.partials.register')
+
+    @include('web.partials.login')
 
     @yield('scripts')
 

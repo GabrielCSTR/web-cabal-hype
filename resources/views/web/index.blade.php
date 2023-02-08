@@ -54,10 +54,10 @@
             </div>
             <div class="menuContent">
                 <ul class="menu flex-c-c">
-                    <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
-                    <li class="{{ (request()->is('download')) ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
+                    <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ route('web.home') }}">Home</a></li>
+                    <li class="{{ request()->is('download') ? 'active' : '' }}"><a href="{{ route('web.download') }}">download</a></li>
                     <li><a href="#">RANKINGS</a></li>
-                    <li><a href="#">Discord</a></li>
+                    <li><a href="https://discord.com/invite/RZycJnyw5q">Discord</a></li>
                     {{--<li><a href="" onclick="new modal('#sign_up_modal');return false">CADASTRO</a></li>
                     <li><a href="" onclick="new modal('#login_modal');return false">LOGIN</a></li>
                      <li><a href="">Top Guilds</a></li>

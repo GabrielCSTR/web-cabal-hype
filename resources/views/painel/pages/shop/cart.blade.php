@@ -45,7 +45,7 @@
                     @if ($itemsCart->count() > 0)
                         @foreach ($itemsCart as $id => $details)
                             @php $total += $details['price'] * $details['quantity'] @endphp
-                            <tr data-id="{{ $id }}">
+                            <tr data-id="{{ $id }}" data-product="{{ $details['ProductID'] }}">
                                 <td data-th="Product">
                                     <div class="row">
                                         <div class="col-sm-3 hidden-xs mr-2"><img
@@ -82,7 +82,7 @@
                         <td colspan="5" class="text-right" data-th="">
                             <a href="{{ url('/shop/5') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i>
                                 Continue Comprando</a>
-                            <button class="btn btn-success buy-product">Comprar</button>
+                            <button class="btn btn-success buy-product" @if($total <= 0) disabled='disabled' @endif>Comprar</button>
                         </td>
                     </tr>
                 </tfoot>
@@ -133,10 +133,15 @@
                         method: "DELETE",
                         data: {
                             _token: '{{ csrf_token() }}',
-                            id: ele.parents("tr").attr("data-id")
+                            id: ele.parents("tr").attr("data-product")
                         },
                         success: function(response) {
-                            window.location.reload();
+                            if (response.success) {
+                                toastr.success(response.message);
+                                window.location.reload();
+                            } else {
+                                toastr.error(response.message);
+                            }
                         }
                     });
                 }
