@@ -45,7 +45,7 @@
                     @if ($itemsCart->count() > 0)
                         @foreach ($itemsCart as $id => $details)
                             @php $total += $details['price'] * $details['quantity'] @endphp
-                            <tr data-id="{{ $id }}" data-product="{{ $details['ProductID'] }}">
+                            <tr id="product" data-id="{{ $id }}" data-product="{{ $details['ProductID'] }}">
                                 <td data-th="Product">
                                     <div class="row">
                                         <div class="col-sm-3 hidden-xs mr-2"><img
@@ -82,7 +82,7 @@
                         <td colspan="5" class="text-right" data-th="">
                             <a href="{{ url('/shop/5') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i>
                                 Continue Comprando</a>
-                            <button class="btn btn-success buy-product" @if($total <= 0) disabled='disabled' @endif>Comprar</button>
+                            <button id="buy-product" class="btn btn-success buy-product" @if($total <= 0) disabled='disabled' @endif>Comprar</button>
                         </td>
                     </tr>
                 </tfoot>
@@ -93,24 +93,48 @@
 
 @section('scripts')
     <script type="text/javascript">
-        // $(".update-cart").change(function(e) {
-        //     e.preventDefault();
 
-        //     var ele = $(this);
+        $(".buy-product").click(function(e) {
+            e.preventDefault();
 
-        //     $.ajax({
-        //         url: '{{ route('update.cart') }}',
-        //         method: "patch",
-        //         data: {
-        //             _token: '{{ csrf_token() }}',
-        //             id: ele.parents("tr").attr("data-id"),
-        //             quantity: ele.parents("tr").find(".quantity").val()
-        //         },
-        //         success: function(response) {
-        //             window.location.reload();
-        //         }
-        //     });
-        // });
+            var ele = $(this);
+            var botao = document.getElementById("buy-product");
+            botao.disabled = true;
+
+            Swal.fire({
+                title: "Deseja comprar esses produtos?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Sim, Comprar!",
+                cancelButtonText: "Não, Cancelar!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '{{ route('buy.product') }}',
+                        method: "POST",
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                toastr.success(response.message);
+                                window.location.reload();
+                            } else {
+                                toastr.error(response.message);
+                                botao.disabled = false;
+                            }
+                        }
+                    });
+                }
+                else {
+                    botao.disabled = false;
+                }
+            });
+
+        });
 
         $(".remove-from-cart").click(function(e) {
             e.preventDefault();
@@ -134,43 +158,6 @@
                         data: {
                             _token: '{{ csrf_token() }}',
                             id: ele.parents("tr").attr("data-product")
-                        },
-                        success: function(response) {
-                            if (response.success) {
-                                toastr.success(response.message);
-                                window.location.reload();
-                            } else {
-                                toastr.error(response.message);
-                            }
-                        }
-                    });
-                }
-            });
-
-        });
-
-        $(".buy-product").click(function(e) {
-            e.preventDefault();
-
-            var ele = $(this);
-
-            Swal.fire({
-                title: "Deseja comprar esses produtos?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Sim, Comprar!",
-                cancelButtonText: "Não, Cancelar!",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $.ajax({
-                        url: '{{ route('buy.product') }}',
-                        method: "POST",
-                        data: {
-                            _token: '{{ csrf_token() }}',
-                            id: ele.parents("tr").attr("data-id")
                         },
                         success: function(response) {
                             if (response.success) {

@@ -85,7 +85,7 @@
                 @endif
                 <div class="item-img flex-c-c">
                     @if (file_exists('storage/shop/images/'. $product->Image))
-                        <img src="{{ asset('storage/shop/images/' . $product->Image) }}" alt="" width="80" height="80">
+                        <img src="{{ asset('storage/shop/images/' . $product->Image) }}" alt="" width="120" height="120">
                     @endif
                 </div>
                 <div class="item-name">

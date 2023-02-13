@@ -2,7 +2,7 @@
 
 @section('header')
 	<div class="content-header-left col-md-6 col-12">
-		<h1 class="content-header-title mb-0">Serviço Premium / Passe De batalha</h1>
+		<h1 class="content-header-title mb-0">Serviço Premium</h1>
 	</div>
 	<div class="content-header-right text-md-right col-md-6 col-12">
 		{{--  @include('instaciaFilial')  --}}
